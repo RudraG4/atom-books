@@ -4,9 +4,7 @@ import BookCard from "./BookCard";
 import getBooks from "../../api/books";
 
 export default function BookGrid() {
-  const [books, setBooks] = useState({
-    total: 0, results: [],
-  });
+  const [books, setBooks] = useState({ total: 0, results: [] });
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {

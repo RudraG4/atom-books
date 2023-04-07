@@ -9,7 +9,12 @@ export default function ComingSoon() {
         px: "0 !important",
       }}
     >
-      <Box display="flex" justifyContent="center" alignItems="center" minHeight="80vh">
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        minHeight="80vh"
+      >
         Coming Soon
       </Box>
     </Container>

@@ -1,6 +1,3 @@
-const config = {
-  appName: "atom",
-  icon: "",
-};
+const config = { appName: "atom", icon: "" };
 
 export default config;

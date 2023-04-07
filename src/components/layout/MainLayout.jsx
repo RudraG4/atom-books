@@ -9,8 +9,7 @@ export default function MainLayout() {
     <Stack
       direction="row"
       sx={{
-        height: "100%",
-        maxHeight: "100vh",
+        height: "100%", maxHeight: "100vh",
       }}
     >
       <Sidebar />
