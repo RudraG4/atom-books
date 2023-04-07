@@ -1,0 +1,772 @@
+{
+	"kind": "books#volumes",
+	"totalItems": 1407,
+	"items": [
+		{
+			"kind": "books#volume",
+			"id": "NYThDwAAQBAJ",
+			"etag": "E6CAOF2AWjg",
+			"selfLink": "https://www.googleapis.com/books/v1/volumes/NYThDwAAQBAJ",
+			"volumeInfo": {
+				"title": "GRE Prep Plus 2021",
+				"subtitle": "6 Practice Tests + Proven Strategies + Online + Video + Mobile",
+				"authors": ["Kaplan Test Prep"],
+				"publisher": "Kaplan Publishing",
+				"publishedDate": "2020-06-02",
+				"description": "Kaplan's GRE Prep Plus 2021 guides you through the GRE step-by-step, with expert strategies, essential content review, and five online practice tests. Get an advantage on test day with our proven test-taking strategies, math skills review, and one-year access to online practice and lessons. We’re so certain that GRE Prep Plus 2021 offers all the knowledge you need to excel at the GRE that we guarantee it: After studying with the online resources and book, you'll score higher on the GRE—or you'll get your money back. The Best Practice Five full-length online tests help you practice in the same computer-based format you'll see on test day. One full-length practice test included in the book for easier reference and review. More than 1,700 questions with detailed explanations. Personalize your study plan with the individual performance summary you'll receive after each online practice test. Customize your practice with a 500-question online Qbank that lets you select problems by topic and difficulty. Chapters on each GRE question type and math skill, with practice sets for each. Questions have been reviewed, revised, and updated by Kaplan's expert faculty. Efficient Strategies and Expert Guidance Expert videos on stress-reduction techniques and study planning tactics that can help you ace the GRE. GRE Prep Plus 2021 comes with one-on-one academic support from Kaplan faculty via our Facebook page: facebook.com/KaplanGradPrep We know the test: The Kaplan team has spent years studying every GRE-related document available. Kaplan's experts ensure our practice questions and study materials are true to the test. We invented test prep—Kaplan (www.kaptest.com) has been helping students for 80 years. Our proven strategies have helped legions of students achieve their dreams. Want to boost your studies with even more online practice and in-depth GRE math and verbal workbooks? Try Kaplan's GRE Complete 2021.",
+				"industryIdentifiers": [
+					{
+						"type": "ISBN_13",
+						"identifier": "9781506262437"
+					},
+					{
+						"type": "ISBN_10",
+						"identifier": "1506262430"
+					}
+				],
+				"readingModes": {
+					"text": false,
+					"image": false
+				},
+				"pageCount": 709,
+				"printType": "BOOK",
+				"categories": ["Study Aids"],
+				"maturityRating": "NOT_MATURE",
+				"allowAnonLogging": false,
+				"contentVersion": "0.1.1.0.preview.0",
+				"panelizationSummary": {
+					"containsEpubBubbles": false,
+					"containsImageBubbles": false
+				},
+				"imageLinks": {
+					"smallThumbnail": "http://books.google.com/books/content?id=NYThDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+					"thumbnail": "http://books.google.com/books/content?id=NYThDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+				},
+				"language": "en",
+				"previewLink": "http://books.google.co.in/books?id=NYThDwAAQBAJ&printsec=frontcover&dq=kaplan+test+prep&hl=&cd=1&source=gbs_api",
+				"infoLink": "http://books.google.co.in/books?id=NYThDwAAQBAJ&dq=kaplan+test+prep&hl=&source=gbs_api",
+				"canonicalVolumeLink": "https://books.google.com/books/about/GRE_Prep_Plus_2021.html?hl=&id=NYThDwAAQBAJ"
+			},
+			"saleInfo": {
+				"country": "IN",
+				"saleability": "NOT_FOR_SALE",
+				"isEbook": false
+			},
+			"accessInfo": {
+				"country": "IN",
+				"viewability": "PARTIAL",
+				"embeddable": true,
+				"publicDomain": false,
+				"textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+				"epub": {
+					"isAvailable": false
+				},
+				"pdf": {
+					"isAvailable": false
+				},
+				"webReaderLink": "http://play.google.com/books/reader?id=NYThDwAAQBAJ&hl=&source=gbs_api",
+				"accessViewStatus": "SAMPLE",
+				"quoteSharingAllowed": false
+			},
+			"searchInfo": {
+				"textSnippet": "The Best Practice Five full-length online tests help you practice in the same computer-based format you&#39;ll see on test day. One full-length practice test included in the book for easier reference and review."
+			}
+		},
+		{
+			"kind": "books#volume",
+			"id": "hRDADwAAQBAJ",
+			"etag": "u+qfTqkt4j8",
+			"selfLink": "https://www.googleapis.com/books/v1/volumes/hRDADwAAQBAJ",
+			"volumeInfo": {
+				"title": "Official Guide to OET",
+				"authors": ["Kaplan Test Prep"],
+				"publisher": "Simon and Schuster",
+				"publishedDate": "2020-03-03",
+				"description": "The Official Guide to OET is the first guide book endorsed by the test maker (CBLA) and is designed to prepare students for the updated OET exam. Kaplan Test Prep, the world leader in test preparation since 1938, has authored this book incorporating key test-taking tips and strategies. The practice questions have been reviewed by CBLA to ensure they are true to the test. Get familiar with the exam to help you face the OET with confidence. Test-like Listening tracks, realistic practice questions, and additional online resources give you everything you need to succeed on the OET. This book is suitable for both self-study and classroom use. To access your audio and online resources, first register online at kaptest.com/booksonline. Once you’ve registered, access your audio and resources at kaptest.com/login or download the Kaplan Mobile Prep app on Google Play or the App Store for your Android or iOS device Tips and Practice 1 full practice test Online audio for Listening content Skill-boosting activities for each of the subtests (Listening, Reading, Writing & Speaking Self-study tips Test Day advice Expert Guidance We know the test: The Kaplan team in conjunction with CBLA ensure our practice questions and study materials are true to the test Kaplan's books and practice questions are written by experts who know students—every explanation is written to help you learn We invented test prep—Kaplan (www.kaptestglobal.com) has been helping students for 80 years, and our proven strategies have helped legions of students achieve their dreams",
+				"industryIdentifiers": [
+					{
+						"type": "ISBN_13",
+						"identifier": "9781506263236"
+					},
+					{
+						"type": "ISBN_10",
+						"identifier": "1506263232"
+					}
+				],
+				"readingModes": {
+					"text": true,
+					"image": false
+				},
+				"pageCount": 252,
+				"printType": "BOOK",
+				"categories": ["Foreign Language Study"],
+				"maturityRating": "NOT_MATURE",
+				"allowAnonLogging": true,
+				"contentVersion": "1.3.3.0.preview.2",
+				"panelizationSummary": {
+					"containsEpubBubbles": false,
+					"containsImageBubbles": false
+				},
+				"imageLinks": {
+					"smallThumbnail": "http://books.google.com/books/content?id=hRDADwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+					"thumbnail": "http://books.google.com/books/content?id=hRDADwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+				},
+				"language": "en",
+				"previewLink": "http://books.google.co.in/books?id=hRDADwAAQBAJ&pg=PP1&dq=kaplan+test+prep&hl=&cd=2&source=gbs_api",
+				"infoLink": "https://play.google.com/store/books/details?id=hRDADwAAQBAJ&source=gbs_api",
+				"canonicalVolumeLink": "https://play.google.com/store/books/details?id=hRDADwAAQBAJ"
+			},
+			"saleInfo": {
+				"country": "IN",
+				"saleability": "FOR_SALE",
+				"isEbook": true,
+				"listPrice": {
+					"amount": 1681.5,
+					"currencyCode": "INR"
+				},
+				"retailPrice": {
+					"amount": 1681.5,
+					"currencyCode": "INR"
+				},
+				"buyLink": "https://play.google.com/store/books/details?id=hRDADwAAQBAJ&rdid=book-hRDADwAAQBAJ&rdot=1&source=gbs_api",
+				"offers": [
+					{
+						"finskyOfferType": 1,
+						"listPrice": {
+							"amountInMicros": 1681500000,
+							"currencyCode": "INR"
+						},
+						"retailPrice": {
+							"amountInMicros": 1681500000,
+							"currencyCode": "INR"
+						}
+					}
+				]
+			},
+			"accessInfo": {
+				"country": "IN",
+				"viewability": "PARTIAL",
+				"embeddable": true,
+				"publicDomain": false,
+				"textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+				"epub": {
+					"isAvailable": true,
+					"acsTokenLink": "http://books.google.co.in/books/download/Official_Guide_to_OET-sample-epub.acsm?id=hRDADwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+				},
+				"pdf": {
+					"isAvailable": false
+				},
+				"webReaderLink": "http://play.google.com/books/reader?id=hRDADwAAQBAJ&hl=&source=gbs_api",
+				"accessViewStatus": "SAMPLE",
+				"quoteSharingAllowed": false
+			},
+			"searchInfo": {
+				"textSnippet": "The Official Guide to OET is the first guide book endorsed by the test maker (CBLA) and is designed to prepare students for the updated OET exam."
+			}
+		},
+		{
+			"kind": "books#volume",
+			"id": "yqlYvwEACAAJ",
+			"etag": "XVaKV3ct5so",
+			"selfLink": "https://www.googleapis.com/books/v1/volumes/yqlYvwEACAAJ",
+			"volumeInfo": {
+				"title": "Kaplan DAT with CD-ROM",
+				"authors": ["Kaplan", "Kaplan Educational Center Staff"],
+				"publisher": "Simon and Schuster",
+				"publishedDate": "2004-04-27",
+				"description": "Kaplan DAT with CD-ROM, Third Editionfeatures: *Complete content review *2 Full-length practice DATs with answers and detailed explanations *Realistic perceptual ability practice test *Interactive feedback on test performance Are you ready for the DAT? You will be. 2 Full-Length Practice Tests • Detailed Explanations for Every Answer • Intensive Science and Quantitative Review • Reading Comprehension Practice Test • Effective Strategies to Maximize Your Score Special CD-ROM Features • Full-Length Practice Test • Complete Explanations for Every Answer • Personalized Interactive Performance Analysis The Only Virtual Reality PAT • Realistic Perceptual Ability Test • Exclusive PAT Exercises • Computerized 3-D Figures You Can Rotate and View at Different Angles",
+				"industryIdentifiers": [
+					{
+						"type": "ISBN_10",
+						"identifier": "0743241495"
+					},
+					{
+						"type": "ISBN_13",
+						"identifier": "9780743241496"
+					}
+				],
+				"readingModes": {
+					"text": false,
+					"image": false
+				},
+				"pageCount": 836,
+				"printType": "BOOK",
+				"maturityRating": "NOT_MATURE",
+				"allowAnonLogging": false,
+				"contentVersion": "0.5.3.0.preview.0",
+				"panelizationSummary": {
+					"containsEpubBubbles": false,
+					"containsImageBubbles": false
+				},
+				"imageLinks": {
+					"smallThumbnail": "http://books.google.com/books/content?id=yqlYvwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+					"thumbnail": "http://books.google.com/books/content?id=yqlYvwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+				},
+				"language": "en",
+				"previewLink": "http://books.google.co.in/books?id=yqlYvwEACAAJ&dq=kaplan+test+prep&hl=&cd=3&source=gbs_api",
+				"infoLink": "http://books.google.co.in/books?id=yqlYvwEACAAJ&dq=kaplan+test+prep&hl=&source=gbs_api",
+				"canonicalVolumeLink": "https://books.google.com/books/about/Kaplan_DAT_with_CD_ROM.html?hl=&id=yqlYvwEACAAJ"
+			},
+			"saleInfo": {
+				"country": "IN",
+				"saleability": "NOT_FOR_SALE",
+				"isEbook": false
+			},
+			"accessInfo": {
+				"country": "IN",
+				"viewability": "NO_PAGES",
+				"embeddable": false,
+				"publicDomain": false,
+				"textToSpeechPermission": "ALLOWED",
+				"epub": {
+					"isAvailable": false
+				},
+				"pdf": {
+					"isAvailable": true
+				},
+				"webReaderLink": "http://play.google.com/books/reader?id=yqlYvwEACAAJ&hl=&source=gbs_api",
+				"accessViewStatus": "NONE",
+				"quoteSharingAllowed": false
+			}
+		},
+		{
+			"kind": "books#volume",
+			"id": "HaTcDwAAQBAJ",
+			"etag": "RM2E/2iFbEk",
+			"selfLink": "https://www.googleapis.com/books/v1/volumes/HaTcDwAAQBAJ",
+			"volumeInfo": {
+				"title": "8 Practice Tests for the SAT",
+				"subtitle": "1,200+ SAT Practice Questions",
+				"authors": ["Kaplan Test Prep"],
+				"publisher": "Simon and Schuster",
+				"publishedDate": "2020-07-07",
+				"description": "Kaplan's 8 Practice Tests for the SAT provides printed practice exams and expert explanations to help you face the SAT with confidence. More than 1,200 realistic practice questions help you get comfortable with the exam format so you can avoid surprises on Test Day. We are so certain that 8 Practice Tests for the SAT offers the practice you need that we guarantee it: After studying with our book, you'll score higher on the SAT—or you'll get your money back. The Most Practice Eight realistic full-length practice tests More than 1,200 practice questions help you increase speed and accuracy with all the different SAT question types More than 450 Math Grid-Ins and Multiple-Choice questions More than 400 Evidence-Based Reading questions More than 350 Writing and Language questions Eight Essay Prompts, complete with model essays and a self-grading guide Detailed answer explanations written by our experts help you determine your strengths and weaknesses and improve your performance. Expert Guidance 9 out of 10 Kaplan students get into one or more of their top choice college We know the test: Our experts have put tens of thousands of hours into studying the SAT – using real data to design the most effective strategies and study materials. We invented test prep. Kaplan has been helping students achieve their goals for over 80 years. Learn more at kaptest.com.",
+				"industryIdentifiers": [
+					{
+						"type": "ISBN_13",
+						"identifier": "9781506272238"
+					},
+					{
+						"type": "ISBN_10",
+						"identifier": "1506272231"
+					}
+				],
+				"readingModes": {
+					"text": true,
+					"image": false
+				},
+				"pageCount": 696,
+				"printType": "BOOK",
+				"categories": ["Study Aids"],
+				"maturityRating": "NOT_MATURE",
+				"allowAnonLogging": true,
+				"contentVersion": "1.4.3.0.preview.2",
+				"panelizationSummary": {
+					"containsEpubBubbles": false,
+					"containsImageBubbles": false
+				},
+				"imageLinks": {
+					"smallThumbnail": "http://books.google.com/books/content?id=HaTcDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+					"thumbnail": "http://books.google.com/books/content?id=HaTcDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+				},
+				"language": "en",
+				"previewLink": "http://books.google.co.in/books?id=HaTcDwAAQBAJ&printsec=frontcover&dq=kaplan+test+prep&hl=&cd=4&source=gbs_api",
+				"infoLink": "https://play.google.com/store/books/details?id=HaTcDwAAQBAJ&source=gbs_api",
+				"canonicalVolumeLink": "https://play.google.com/store/books/details?id=HaTcDwAAQBAJ"
+			},
+			"saleInfo": {
+				"country": "IN",
+				"saleability": "FOR_SALE",
+				"isEbook": true,
+				"listPrice": {
+					"amount": 874.38,
+					"currencyCode": "INR"
+				},
+				"retailPrice": {
+					"amount": 437.19,
+					"currencyCode": "INR"
+				},
+				"buyLink": "https://play.google.com/store/books/details?id=HaTcDwAAQBAJ&rdid=book-HaTcDwAAQBAJ&rdot=1&source=gbs_api",
+				"offers": [
+					{
+						"finskyOfferType": 1,
+						"listPrice": {
+							"amountInMicros": 874380000,
+							"currencyCode": "INR"
+						},
+						"retailPrice": {
+							"amountInMicros": 437190000,
+							"currencyCode": "INR"
+						}
+					}
+				]
+			},
+			"accessInfo": {
+				"country": "IN",
+				"viewability": "PARTIAL",
+				"embeddable": true,
+				"publicDomain": false,
+				"textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+				"epub": {
+					"isAvailable": true,
+					"acsTokenLink": "http://books.google.co.in/books/download/8_Practice_Tests_for_the_SAT-sample-epub.acsm?id=HaTcDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+				},
+				"pdf": {
+					"isAvailable": false
+				},
+				"webReaderLink": "http://play.google.com/books/reader?id=HaTcDwAAQBAJ&hl=&source=gbs_api",
+				"accessViewStatus": "SAMPLE",
+				"quoteSharingAllowed": false
+			},
+			"searchInfo": {
+				"textSnippet": "Kaplan&#39;s 8 Practice Tests for the SAT provides printed practice exams and expert explanations to help you face the SAT with confidence."
+			}
+		},
+		{
+			"kind": "books#volume",
+			"id": "FqcsEAAAQBAJ",
+			"etag": "fXhczWpS4xE",
+			"selfLink": "https://www.googleapis.com/books/v1/volumes/FqcsEAAAQBAJ",
+			"volumeInfo": {
+				"title": "SAT Prep Plus 2022",
+				"subtitle": "5 Practice Tests + Proven Strategies + Online + Video",
+				"authors": ["Kaplan Test Prep"],
+				"publisher": "Simon and Schuster",
+				"publishedDate": "2021-06",
+				"description": "Kaplan's SAT Prep Plus 2022 prepares you for test day with expert strategies, clear explanations, and realistic practice, including a 250-question online Qbank. This comprehensive prep resource features ample practice questions, a layout based on student feedback, and an online tool to generate a customized study plan. We're so certain that SAT Prep Plus 2022 offers all the guidance you need to excel on the SAT that we guarantee it: After studying with our online resources and book, you'll score higher on the SAT--or you'll get your money back. The Best Practice Five full-length Kaplan practice tests: 2 in the book and 3 online More than 1,500 practice questions with detailed explanations Pre-quizzes to help you figure out what you already know and what you can skip Mixed practice quizzes after every chapter to assess how much you've learned A practice question at the beginning of each lesson to help you quickly identify its focus; dedicated practice questions after every lesson to test your comprehension Expert scoring, analysis, and explanations online for two official College Board SAT Practice Tests Efficient Strategy \"On Test Day\" strategy notes in every math chapter to help you remember that the SAT math test is primarily a strategy test. \"Reflect\" pages that help you evaluate your comfort level with the topics after completing each chapter and make a plan for improving before the test. Online study-planning tool helps you target your prep no matter how much time you have before the test. Kaplan's expert strategies for each test section, including special techniques for the optional essay. Expert Guidance We know the test: Our learning engineers have put tens of thousands of hours into studying the SAT, and use real data to design the most effective strategies and study plans. Kaplan's books and practice questions are written by veteran teachers who know students--every explanation is written to help you learn. We invented test prep--Kaplan (kaptest.com) has been helping students for 80 years. Want even more practice questions, in book and online? Try our biggest book available: SAT Total Prep 2022.",
+				"industryIdentifiers": [
+					{
+						"type": "ISBN_13",
+						"identifier": "9781506277387"
+					},
+					{
+						"type": "ISBN_10",
+						"identifier": "1506277381"
+					}
+				],
+				"readingModes": {
+					"text": false,
+					"image": false
+				},
+				"pageCount": 973,
+				"printType": "BOOK",
+				"categories": ["Reference"],
+				"maturityRating": "NOT_MATURE",
+				"allowAnonLogging": false,
+				"contentVersion": "0.0.1.0.preview.0",
+				"panelizationSummary": {
+					"containsEpubBubbles": false,
+					"containsImageBubbles": false
+				},
+				"imageLinks": {
+					"smallThumbnail": "http://books.google.com/books/content?id=FqcsEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+					"thumbnail": "http://books.google.com/books/content?id=FqcsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+				},
+				"language": "en",
+				"previewLink": "http://books.google.co.in/books?id=FqcsEAAAQBAJ&pg=PP1&dq=kaplan+test+prep&hl=&cd=5&source=gbs_api",
+				"infoLink": "http://books.google.co.in/books?id=FqcsEAAAQBAJ&dq=kaplan+test+prep&hl=&source=gbs_api",
+				"canonicalVolumeLink": "https://books.google.com/books/about/SAT_Prep_Plus_2022.html?hl=&id=FqcsEAAAQBAJ"
+			},
+			"saleInfo": {
+				"country": "IN",
+				"saleability": "NOT_FOR_SALE",
+				"isEbook": false
+			},
+			"accessInfo": {
+				"country": "IN",
+				"viewability": "PARTIAL",
+				"embeddable": true,
+				"publicDomain": false,
+				"textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+				"epub": {
+					"isAvailable": false
+				},
+				"pdf": {
+					"isAvailable": false
+				},
+				"webReaderLink": "http://play.google.com/books/reader?id=FqcsEAAAQBAJ&hl=&source=gbs_api",
+				"accessViewStatus": "SAMPLE",
+				"quoteSharingAllowed": false
+			},
+			"searchInfo": {
+				"textSnippet": "The Best Practice Five full-length Kaplan practice tests: 2 in the book and 3 online More than 1,500 practice questions with detailed explanations Pre-quizzes to help you figure out what you already know and what you can skip Mixed practice ..."
+			}
+		},
+		{
+			"kind": "books#volume",
+			"id": "Wl-2DwAAQBAJ",
+			"etag": "gJi8gSWM0C8",
+			"selfLink": "https://www.googleapis.com/books/v1/volumes/Wl-2DwAAQBAJ",
+			"volumeInfo": {
+				"title": "GMAT Prep Plus 2021",
+				"subtitle": "6 Practice Tests + Proven Strategies + Online + Mobile",
+				"authors": ["Kaplan Test Prep"],
+				"publisher": "Simon and Schuster",
+				"publishedDate": "2020-07-07",
+				"description": "Always study with the most up-to-date prep! Look for GMAT Prep Plus 2022–2023, ISBN 9781506277233, on sale December 14, 2021. Publisher's Note: Products purchased from third-party sellers are not guaranteed by the publisher for quality, authenticity, or access to any online entitles included with the product.",
+				"industryIdentifiers": [
+					{
+						"type": "ISBN_13",
+						"identifier": "9781506262383"
+					},
+					{
+						"type": "ISBN_10",
+						"identifier": "1506262384"
+					}
+				],
+				"readingModes": {
+					"text": true,
+					"image": false
+				},
+				"pageCount": 1576,
+				"printType": "BOOK",
+				"categories": ["Study Aids"],
+				"maturityRating": "NOT_MATURE",
+				"allowAnonLogging": true,
+				"contentVersion": "1.2.2.0.preview.2",
+				"panelizationSummary": {
+					"containsEpubBubbles": false,
+					"containsImageBubbles": false
+				},
+				"imageLinks": {
+					"smallThumbnail": "http://books.google.com/books/content?id=Wl-2DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+					"thumbnail": "http://books.google.com/books/content?id=Wl-2DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+				},
+				"language": "en",
+				"previewLink": "http://books.google.co.in/books?id=Wl-2DwAAQBAJ&pg=PP1&dq=kaplan+test+prep&hl=&cd=6&source=gbs_api",
+				"infoLink": "http://books.google.co.in/books?id=Wl-2DwAAQBAJ&dq=kaplan+test+prep&hl=&source=gbs_api",
+				"canonicalVolumeLink": "https://books.google.com/books/about/GMAT_Prep_Plus_2021.html?hl=&id=Wl-2DwAAQBAJ"
+			},
+			"saleInfo": {
+				"country": "IN",
+				"saleability": "NOT_FOR_SALE",
+				"isEbook": false
+			},
+			"accessInfo": {
+				"country": "IN",
+				"viewability": "PARTIAL",
+				"embeddable": true,
+				"publicDomain": false,
+				"textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+				"epub": {
+					"isAvailable": true,
+					"acsTokenLink": "http://books.google.co.in/books/download/GMAT_Prep_Plus_2021-sample-epub.acsm?id=Wl-2DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+				},
+				"pdf": {
+					"isAvailable": false
+				},
+				"webReaderLink": "http://play.google.com/books/reader?id=Wl-2DwAAQBAJ&hl=&source=gbs_api",
+				"accessViewStatus": "SAMPLE",
+				"quoteSharingAllowed": false
+			},
+			"searchInfo": {
+				"textSnippet": "Always study with the most up-to-date prep! Look for GMAT Prep Plus 2022–2023, ISBN 9781506277233, on sale December 14, 2021."
+			}
+		},
+		{
+			"kind": "books#volume",
+			"id": "p2C2DwAAQBAJ",
+			"etag": "6GfqkIFm/4g",
+			"selfLink": "https://www.googleapis.com/books/v1/volumes/p2C2DwAAQBAJ",
+			"volumeInfo": {
+				"title": "SAT Prep Plus 2021",
+				"subtitle": "5 Practice Tests + Proven Strategies + Online",
+				"authors": ["Kaplan Test Prep"],
+				"publisher": "Simon and Schuster",
+				"publishedDate": "2020-06-02",
+				"description": "Always study with the most up-to-date prep! Look for SAT Prep Plus 2022, ISBN 9781506277387, on sale June 01, 2021. Publisher's Note: Products purchased from third-party sellers are not guaranteed by the publisher for quality, authenticity, or access to any online entitles included with the product.",
+				"industryIdentifiers": [
+					{
+						"type": "ISBN_13",
+						"identifier": "9781506262680"
+					},
+					{
+						"type": "ISBN_10",
+						"identifier": "1506262686"
+					}
+				],
+				"readingModes": {
+					"text": true,
+					"image": false
+				},
+				"pageCount": 973,
+				"printType": "BOOK",
+				"categories": ["Study Aids"],
+				"maturityRating": "NOT_MATURE",
+				"allowAnonLogging": true,
+				"contentVersion": "2.2.2.0.preview.2",
+				"panelizationSummary": {
+					"containsEpubBubbles": false,
+					"containsImageBubbles": false
+				},
+				"imageLinks": {
+					"smallThumbnail": "http://books.google.com/books/content?id=p2C2DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+					"thumbnail": "http://books.google.com/books/content?id=p2C2DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+				},
+				"language": "en",
+				"previewLink": "http://books.google.co.in/books?id=p2C2DwAAQBAJ&pg=PP1&dq=kaplan+test+prep&hl=&cd=7&source=gbs_api",
+				"infoLink": "http://books.google.co.in/books?id=p2C2DwAAQBAJ&dq=kaplan+test+prep&hl=&source=gbs_api",
+				"canonicalVolumeLink": "https://books.google.com/books/about/SAT_Prep_Plus_2021.html?hl=&id=p2C2DwAAQBAJ"
+			},
+			"saleInfo": {
+				"country": "IN",
+				"saleability": "NOT_FOR_SALE",
+				"isEbook": false
+			},
+			"accessInfo": {
+				"country": "IN",
+				"viewability": "PARTIAL",
+				"embeddable": true,
+				"publicDomain": false,
+				"textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+				"epub": {
+					"isAvailable": true,
+					"acsTokenLink": "http://books.google.co.in/books/download/SAT_Prep_Plus_2021-sample-epub.acsm?id=p2C2DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+				},
+				"pdf": {
+					"isAvailable": false
+				},
+				"webReaderLink": "http://play.google.com/books/reader?id=p2C2DwAAQBAJ&hl=&source=gbs_api",
+				"accessViewStatus": "SAMPLE",
+				"quoteSharingAllowed": false
+			},
+			"searchInfo": {
+				"textSnippet": "Always study with the most up-to-date prep! Look for SAT Prep Plus 2022, ISBN 9781506277387, on sale June 01, 2021."
+			}
+		},
+		{
+			"kind": "books#volume",
+			"id": "8LMGEAAAQBAJ",
+			"etag": "wHk5BwC4Q5U",
+			"selfLink": "https://www.googleapis.com/books/v1/volumes/8LMGEAAAQBAJ",
+			"volumeInfo": {
+				"title": "GRE Prep Plus 2022",
+				"subtitle": "6 Practice Tests + Proven Strategies + Online",
+				"authors": ["Kaplan Test Prep"],
+				"publisher": "Simon and Schuster",
+				"publishedDate": "2021-09-07",
+				"description": "Kaplan's GRE Prep Plus 2021 guides you through the GRE step-by-step, with expert strategies, essential content review, and five online practice tests. Get an advantage on test day with our proven test-taking strategies, math skills review, and one-year access to online practice and lessons. We’re so certain that GRE Prep Plus 2021 offers all the knowledge you need to excel at the GRE that we guarantee it: After studying with the online resources and book, you'll score higher on the GRE—or you'll get your money back. The Best Practice Five full-length online tests help you practice in the same computer-based format you'll see on test day. One full-length practice test included in the book for easier reference and review. More than 1,700 questions with detailed explanations. Personalize your study plan with the individual performance summary you'll receive after each online practice test. Customize your practice with a 500-question online Qbank that lets you select problems by topic and difficulty. Chapters on each GRE question type and math skill, with practice sets for each. Questions have been reviewed, revised, and updated by Kaplan's expert faculty. Efficient Strategies and Expert Guidance Expert videos on stress-reduction techniques and study planning tactics that can help you ace the GRE. GRE Prep Plus 2021 comes with one-on-one academic support from Kaplan faculty via our Facebook page: facebook.com/KaplanGradPrep We know the test: The Kaplan team has spent years studying every GRE-related document available. Kaplan's experts ensure our practice questions and study materials are true to the test. We invented test prep—Kaplan (www.kaptest.com) has been helping students for 80 years. Our proven strategies have helped legions of students achieve their dreams. Want to boost your studies with even more online practice and in-depth GRE math and verbal workbooks? Try Kaplan's GRE Complete 2021.",
+				"industryIdentifiers": [
+					{
+						"type": "ISBN_13",
+						"identifier": "9781506277196"
+					},
+					{
+						"type": "ISBN_10",
+						"identifier": "1506277195"
+					}
+				],
+				"readingModes": {
+					"text": true,
+					"image": false
+				},
+				"pageCount": 697,
+				"printType": "BOOK",
+				"categories": ["Study Aids"],
+				"maturityRating": "NOT_MATURE",
+				"allowAnonLogging": true,
+				"contentVersion": "1.4.3.0.preview.2",
+				"panelizationSummary": {
+					"containsEpubBubbles": false,
+					"containsImageBubbles": false
+				},
+				"imageLinks": {
+					"smallThumbnail": "http://books.google.com/books/content?id=8LMGEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+					"thumbnail": "http://books.google.com/books/content?id=8LMGEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+				},
+				"language": "en",
+				"previewLink": "http://books.google.co.in/books?id=8LMGEAAAQBAJ&printsec=frontcover&dq=kaplan+test+prep&hl=&cd=8&source=gbs_api",
+				"infoLink": "http://books.google.co.in/books?id=8LMGEAAAQBAJ&dq=kaplan+test+prep&hl=&source=gbs_api",
+				"canonicalVolumeLink": "https://books.google.com/books/about/GRE_Prep_Plus_2022.html?hl=&id=8LMGEAAAQBAJ"
+			},
+			"saleInfo": {
+				"country": "IN",
+				"saleability": "NOT_FOR_SALE",
+				"isEbook": false
+			},
+			"accessInfo": {
+				"country": "IN",
+				"viewability": "PARTIAL",
+				"embeddable": true,
+				"publicDomain": false,
+				"textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+				"epub": {
+					"isAvailable": true,
+					"acsTokenLink": "http://books.google.co.in/books/download/GRE_Prep_Plus_2022-sample-epub.acsm?id=8LMGEAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+				},
+				"pdf": {
+					"isAvailable": false
+				},
+				"webReaderLink": "http://play.google.com/books/reader?id=8LMGEAAAQBAJ&hl=&source=gbs_api",
+				"accessViewStatus": "SAMPLE",
+				"quoteSharingAllowed": false
+			},
+			"searchInfo": {
+				"textSnippet": "The Best Practice Five full-length online tests help you practice in the same computer-based format you&#39;ll see on test day. One full-length practice test included in the book for easier reference and review."
+			}
+		},
+		{
+			"kind": "books#volume",
+			"id": "S_REDAAAQBAJ",
+			"etag": "KLpTfccPd4o",
+			"selfLink": "https://www.googleapis.com/books/v1/volumes/S_REDAAAQBAJ",
+			"volumeInfo": {
+				"title": "GRE Premier 2017 with 6 Practice Tests",
+				"subtitle": "Online + Book + Videos + Mobile",
+				"authors": ["Kaplan Publishing"],
+				"publisher": "Simon and Schuster",
+				"publishedDate": "2016-06-07",
+				"description": "\"Online + book + videos + mobile\"--Cover.",
+				"industryIdentifiers": [
+					{
+						"type": "ISBN_13",
+						"identifier": "9781506203225"
+					},
+					{
+						"type": "ISBN_10",
+						"identifier": "1506203221"
+					}
+				],
+				"readingModes": {
+					"text": false,
+					"image": false
+				},
+				"pageCount": 653,
+				"printType": "BOOK",
+				"categories": ["Study Aids"],
+				"maturityRating": "NOT_MATURE",
+				"allowAnonLogging": false,
+				"contentVersion": "0.3.1.0.preview.0",
+				"panelizationSummary": {
+					"containsEpubBubbles": false,
+					"containsImageBubbles": false
+				},
+				"imageLinks": {
+					"smallThumbnail": "http://books.google.com/books/content?id=S_REDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+					"thumbnail": "http://books.google.com/books/content?id=S_REDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+				},
+				"language": "en",
+				"previewLink": "http://books.google.co.in/books?id=S_REDAAAQBAJ&pg=PP1&dq=kaplan+test+prep&hl=&cd=9&source=gbs_api",
+				"infoLink": "http://books.google.co.in/books?id=S_REDAAAQBAJ&dq=kaplan+test+prep&hl=&source=gbs_api",
+				"canonicalVolumeLink": "https://books.google.com/books/about/GRE_Premier_2017_with_6_Practice_Tests.html?hl=&id=S_REDAAAQBAJ"
+			},
+			"saleInfo": {
+				"country": "IN",
+				"saleability": "NOT_FOR_SALE",
+				"isEbook": false
+			},
+			"accessInfo": {
+				"country": "IN",
+				"viewability": "PARTIAL",
+				"embeddable": true,
+				"publicDomain": false,
+				"textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+				"epub": {
+					"isAvailable": false
+				},
+				"pdf": {
+					"isAvailable": false
+				},
+				"webReaderLink": "http://play.google.com/books/reader?id=S_REDAAAQBAJ&hl=&source=gbs_api",
+				"accessViewStatus": "SAMPLE",
+				"quoteSharingAllowed": false
+			},
+			"searchInfo": {
+				"textSnippet": "&quot;Online + book + videos + mobile&quot;--Cover."
+			}
+		},
+		{
+			"kind": "books#volume",
+			"id": "GkldEAAAQBAJ",
+			"etag": "F/PbS+a4iL4",
+			"selfLink": "https://www.googleapis.com/books/v1/volumes/GkldEAAAQBAJ",
+			"volumeInfo": {
+				"title": "OAT Prep Plus 2023-2024",
+				"subtitle": "2 Practice Tests + Proven Strategies + Online",
+				"authors": ["Kaplan Test Prep"],
+				"publisher": "Simon and Schuster",
+				"publishedDate": "2023-04-04",
+				"description": "Publisher's Note: Products purchased from 3rd party sellers are not guaranteed by the publisher for quality, authenticity, or access to any online entities included with the product. Kaplan's OAT Prep Plus 2023–2024 provides the test-taking strategies, realistic practice, and expert guidance you need to get the OAT results you want. Our comprehensive subject review reflects recent changes to the blueprint of the exam, question types, and test interface. You'll get two full-length practice OATs and expert tips to help you face Test Day with confidence. We're so confident that OAT Prep Plus offers all the knowledge you need to excel on the test that we guarantee it: after studying with our online resources and book, you'll score higher on the OAT—or you'll get your money back. The Best Review Two updated full-length, online practice exams for test-like practice Study-planning guidance More than 600 practice questions for every subject, with detailed answers and explanations 16-page full-color study sheets for high-yield review on the go A guide to the current OAT Blueprint so you know exactly what to expect on Test Day Comprehensive review of all of the content covered on the OAT Expert Guidance Our books and practice questions are written by veteran teachers who know students—every explanation is written to help you learn Kaplan's experts ensure our practice questions and study materials are true to the test We invented test prep—Kaplan (www.kaptest.com) has been helping students for 80 years, and our proven strategies have helped legions of students achieve their dreams",
+				"industryIdentifiers": [
+					{
+						"type": "ISBN_13",
+						"identifier": "9781506276816"
+					},
+					{
+						"type": "ISBN_10",
+						"identifier": "1506276814"
+					}
+				],
+				"readingModes": {
+					"text": true,
+					"image": false
+				},
+				"pageCount": 1528,
+				"printType": "BOOK",
+				"categories": ["Medical"],
+				"maturityRating": "NOT_MATURE",
+				"allowAnonLogging": false,
+				"contentVersion": "1.2.2.0.preview.2",
+				"panelizationSummary": {
+					"containsEpubBubbles": false,
+					"containsImageBubbles": false
+				},
+				"imageLinks": {
+					"smallThumbnail": "http://books.google.com/books/content?id=GkldEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+					"thumbnail": "http://books.google.com/books/content?id=GkldEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+				},
+				"language": "en",
+				"previewLink": "http://books.google.co.in/books?id=GkldEAAAQBAJ&printsec=frontcover&dq=kaplan+test+prep&hl=&cd=10&source=gbs_api",
+				"infoLink": "https://play.google.com/store/books/details?id=GkldEAAAQBAJ&source=gbs_api",
+				"canonicalVolumeLink": "https://play.google.com/store/books/details?id=GkldEAAAQBAJ"
+			},
+			"saleInfo": {
+				"country": "IN",
+				"saleability": "FOR_SALE",
+				"isEbook": true,
+				"listPrice": {
+					"amount": 4037.96,
+					"currencyCode": "INR"
+				},
+				"retailPrice": {
+					"amount": 4037.96,
+					"currencyCode": "INR"
+				},
+				"buyLink": "https://play.google.com/store/books/details?id=GkldEAAAQBAJ&rdid=book-GkldEAAAQBAJ&rdot=1&source=gbs_api",
+				"offers": [
+					{
+						"finskyOfferType": 1,
+						"listPrice": {
+							"amountInMicros": 4037960000,
+							"currencyCode": "INR"
+						},
+						"retailPrice": {
+							"amountInMicros": 4037960000,
+							"currencyCode": "INR"
+						}
+					}
+				]
+			},
+			"accessInfo": {
+				"country": "IN",
+				"viewability": "PARTIAL",
+				"embeddable": true,
+				"publicDomain": false,
+				"textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+				"epub": {
+					"isAvailable": true,
+					"acsTokenLink": "http://books.google.co.in/books/download/OAT_Prep_Plus_2023_2024-sample-epub.acsm?id=GkldEAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+				},
+				"pdf": {
+					"isAvailable": false
+				},
+				"webReaderLink": "http://play.google.com/books/reader?id=GkldEAAAQBAJ&hl=&source=gbs_api",
+				"accessViewStatus": "SAMPLE",
+				"quoteSharingAllowed": false
+			},
+			"searchInfo": {
+				"textSnippet": "The Best Review Two updated full-length, online practice exams for test-like practice Study-planning guidance More than 600 practice questions for every subject, with detailed answers and explanations 16-page full-color study sheets for ..."
+			}
+		}
+	]
+}
