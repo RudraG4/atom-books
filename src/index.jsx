@@ -3,8 +3,8 @@ import { createRoot } from "react-dom/client";
 import { CssBaseline } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Provider } from "react-redux";
-import store from "./store/store";
-import { fetchBooks } from "./features/books/slice/BookSlice";
+import { fetchBooks } from "features/books/slice/BookSlice";
+import store from "store";
 import App from "./App";
 import "./styles.css";
 

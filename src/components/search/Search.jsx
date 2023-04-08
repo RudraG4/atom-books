@@ -4,7 +4,7 @@ import styled from "@mui/material/styles/styled";
 import { useState, useEffect } from "react";
 import { BiSearch } from "react-icons/bi";
 import PropTypes from "prop-types";
-import useDebounce from "../../hooks/useDebounce";
+import useDebounce from "hooks/useDebounce";
 
 const StyledTextField = styled(TextField)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {

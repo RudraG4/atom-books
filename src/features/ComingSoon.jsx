@@ -3,12 +3,7 @@ import Box from "@mui/material/Box";
 
 export default function ComingSoon() {
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        px: "0 !important",
-      }}
-    >
+    <Container maxWidth="lg" sx={{ px: "0 !important" }}>
       <Box
         display="flex"
         justifyContent="center"

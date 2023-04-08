@@ -6,7 +6,7 @@ import Stack from "@mui/material/Stack";
 import { ErrorBoundary } from "react-error-boundary";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import Search from "../../components/search/Search";
+import Search from "components/search/Search";
 import BookGrid from "./components/BookGrid";
 import ErrorHandler from "./components/ErrorHandler";
 import { fetchBooks, searchBook } from "./slice/BookSlice";

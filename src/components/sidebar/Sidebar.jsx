@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import styled from "@mui/material/styles/styled";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { nanoid } from "nanoid";
-import { appRoutes } from "../../routes";
+import { appRoutes } from "routes";
 import SidebarItem from "./SidebarItem";
 import SidebarItemCollapsable from "./SidebarItemCollapsable";
 
