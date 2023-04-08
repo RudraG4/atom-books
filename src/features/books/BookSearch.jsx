@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import { ErrorBoundary } from "react-error-boundary";
 import { useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Search from "../../components/search/Search";
 import BookGrid from "./components/BookGrid";
 import ErrorHandler from "./components/ErrorHandler";
@@ -14,11 +14,6 @@ import { fetchBooks, searchBook } from "./slice/BookSlice";
 export default function BookSearch() {
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState("");
-
-  useEffect(() => {
-    dispatch(fetchBooks());
-    // eslint-disable-next-line
-  }, []);
 
   const onSearch = (searchValue) => {
     setSearchTerm(searchValue);
@@ -36,7 +31,11 @@ export default function BookSearch() {
           <Typography variant="h4" component="h4" fontWeight="600">
             Books
           </Typography>
-          <Button variant="contained" size="small">
+          <Button
+            variant="contained"
+            size="medium"
+            sx={{ textTransform: "capitalize" }}
+          >
             Create New Book
           </Button>
         </Stack>

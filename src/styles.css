@@ -1,22 +1,21 @@
 body {
-	font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-	margin: 0;
-	color: rgb(0, 0, 0);
-	font-size: 16px;
+  margin: 0;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
 }
 
 a {
-	font-weight: inherit;
-	color: inherit;
-	text-decoration: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-decoration: inherit;
 }
 
 a:hover {
-	color: inherit;
-	text-decoration: inherit;
+  color: inherit;
+  text-decoration: inherit;
 }
 
 #root {
-	min-height: 100vh;
-	max-height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
 }

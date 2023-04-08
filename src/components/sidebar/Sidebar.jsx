@@ -18,7 +18,7 @@ const Drawer = styled(MuiDrawer, {
     position: "relative",
     whiteSpace: "nowrap",
     overflowX: "hidden",
-    color: "rgb(50 51 51 / 54%)",
+    color: theme.palette.text.secondary,
     fontWeight: 400,
     width: 300,
     transition: theme.transitions.create("width", {

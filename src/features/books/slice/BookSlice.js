@@ -1,10 +1,23 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import fetchBooksApi from "../../../api/books";
+import axios from "axios";
+
+const BOOK_URL =
+  "https://www.googleapis.com/books/v1/volumes?q=kaplan%20test%20prep";
 
 /** Create Async Actions */
 export const fetchBooks = createAsyncThunk("books/fetchBooks", async () => {
-  const response = await fetchBooksApi();
-  return response;
+  const response = await axios.get(BOOK_URL);
+  const result = {
+    total: response.data.totalItems || 0,
+    results: response.data.items?.map((book) => ({
+      id: book.id,
+      title: book.volumeInfo?.title,
+      authors: book.volumeInfo?.authors.join(","),
+      publisher: book.volumeInfo?.publisher,
+      publishedDate: book.volumeInfo?.publishedDate,
+    })),
+  };
+  return result;
 });
 
 const initialState = {
@@ -13,7 +26,7 @@ const initialState = {
   total: 0,
   books: [],
   filteredBooks: [],
-  searchTerm: ''
+  searchTerm: "",
 };
 
 const bookSlice = createSlice({
@@ -22,9 +35,14 @@ const bookSlice = createSlice({
   reducers: {
     searchBook: (state, action) => {
       const searchTerm = action.payload;
-      const filteredBooks = state.books.filter((book) =>
-        book.title.toLowerCase().includes(searchTerm?.toLowerCase())
-      );
+      let filteredBooks;
+      if (searchTerm) {
+        filteredBooks = state.books.filter((book) =>
+          book.title.toLowerCase().includes(searchTerm?.toLowerCase())
+        );
+      } else {
+        filteredBooks = state.books;
+      }
       return { ...state, filteredBooks, searchTerm };
     },
   },
@@ -60,7 +78,8 @@ export const getBooks = (state) => state.books.books;
 export const getStatus = (state) => state.books.status;
 export const getError = (state) => state.books.error;
 export const getFilteredBooks = (state) => state.books.filteredBooks;
-/** Actions from reducer */
+
+/** Actions from reducers */
 export const { searchBook } = bookSlice.actions;
 
 /** Books Reducer */

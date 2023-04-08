@@ -22,7 +22,9 @@ export default function BookGrid() {
   if (status === "loading") {
     return (
       <Grid container justifyContent="center">
-        <Typography color="text-secondaryt">Loading Books...</Typography>
+        <Typography fontWeight="600" color="text.secondary">
+          Loading Books...
+        </Typography>
       </Grid>
     );
   }
@@ -30,7 +32,9 @@ export default function BookGrid() {
   if (status === "error") {
     return (
       <Grid container justifyContent="center">
-        <Typography color="text-secondary">{error}</Typography>
+        <Typography fontWeight="600" color="text.secondary">
+          {error}
+        </Typography>
       </Grid>
     );
   }
@@ -38,7 +42,9 @@ export default function BookGrid() {
   if (!books.length) {
     return (
       <Grid container justifyContent="center">
-        <Typography color="text-secondary">No Data</Typography>
+        <Typography fontWeight="600" color="text.secondary">
+          No Data
+        </Typography>
       </Grid>
     );
   }

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const StyledCard = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   color: theme.palette.text.secondary,
-  borderLeft: "4px solid #ffa500",
+  borderLeft: "4px solid #ffa839",
 }));
 
 function BookCard(props) {
