@@ -26,9 +26,13 @@
   "rules": {
     "semi": ["error", "always"],
     "quotes": ["error", "double"],
+    "comma-dangle": "off",
+    "no-unreachable": "off",
     "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": "off",
     "linebreak-style": "off",
     "implicit-arrow-linebreak": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "function-paren-newline": "off"
   }
 }

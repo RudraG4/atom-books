@@ -13,13 +13,25 @@ import SidebarListItemIcon from "./SidebarListItemIcon";
 function SidebarItemCollapsable(props) {
   const [open, setOpen] = useState(false);
   const { item } = props;
-  // const { label, icon, children } = item;
-
-  // if (!label || !icon || !children) return;
 
   const handleToggleCollapse = () => {
     setOpen(!open);
   };
+
+  const generateMenuItems = (routes) =>
+    routes?.map((route) => {
+      const { label, children, path } = route;
+
+      if (!label) return null;
+
+      if (children) {
+        return <SidebarItemCollapsable key={nanoid()} item={route} />;
+      }
+
+      if (!path) return null;
+
+      return <SidebarItem key={nanoid()} item={route} />;
+    });
 
   return (
     <>
@@ -32,22 +44,7 @@ function SidebarItemCollapsable(props) {
       </SidebarListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          {item.children?.map((child) => {
-            const { path, label, icon, children } = child;
-            const key = nanoid();
-            return children ? (
-              <SidebarItemCollapsable key={key} item={child} />
-            ) : (
-              <SidebarItem
-                key={key}
-                item={{
-                  path,
-                  label,
-                  icon,
-                }}
-              />
-            );
-          })}
+          {generateMenuItems(item.children)}
         </List>
       </Collapse>
     </>
@@ -55,7 +52,17 @@ function SidebarItemCollapsable(props) {
 }
 
 SidebarItemCollapsable.propTypes = {
-  item: PropTypes.isRequired,
+  item: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    icon: PropTypes.element,
+    children: PropTypes.arrayOf(
+      PropTypes.shape({
+        path: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        icon: PropTypes.element,
+      })
+    ),
+  }).isRequired,
 };
 
 export default SidebarItemCollapsable;

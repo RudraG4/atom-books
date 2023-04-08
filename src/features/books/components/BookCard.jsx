@@ -17,9 +17,7 @@ function BookCard(props) {
   return (
     <StyledCard>
       <CardActionArea
-        sx={{
-          padding: "1.05rem",
-        }}
+        sx={{ padding: "1.05rem" }}
         component={Link}
         to={`/book/${book.id}`}
       >
@@ -35,7 +33,13 @@ function BookCard(props) {
 }
 
 BookCard.propTypes = {
-  book: PropTypes.isRequired,
+  book: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    authors: PropTypes.string.isRequired,
+    publisher: PropTypes.string.isRequired,
+    publishedDate: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default BookCard;

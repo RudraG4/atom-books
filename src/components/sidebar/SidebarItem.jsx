@@ -8,22 +8,22 @@ import SidebarListItemIcon from "./SidebarListItemIcon";
 function SidebarItem(props) {
   const { item } = props;
 
-  const { label, icon, path } = item;
-
-  // if (!path || !label || !icon) return;
-
   return (
-    <SidebarListItemButton component={NavLink} to={path}>
-      <SidebarListItemIcon>{icon}</SidebarListItemIcon>
+    <SidebarListItemButton component={NavLink} to={item.path}>
+      <SidebarListItemIcon>{item.icon}</SidebarListItemIcon>
       <ListItemText
-        primary={<Typography variant="body2">{label}</Typography>}
+        primary={<Typography variant="body2">{item.label}</Typography>}
       />
     </SidebarListItemButton>
   );
 }
 
 SidebarItem.propTypes = {
-  item: PropTypes.isRequired,
+  item: PropTypes.shape({
+    path: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    icon: PropTypes.element,
+  }).isRequired,
 };
 
 export default SidebarItem;

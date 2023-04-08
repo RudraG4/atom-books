@@ -63,22 +63,20 @@ export default function Sidebar() {
     setOpen(!open);
   };
 
-  const generateMenuItems = () => appRoutes.map((route) => {
-    const { path, label, icon, children } = route;
-    const key = nanoid();
-    return children ? (
-      <SidebarItemCollapsable item={route} key={key} />
-    ) : (
-      <SidebarItem
-        item={{
-          path,
-          label,
-          icon,
-        }}
-        key={key}
-      />
-    );
-  });
+  const generateMenuItems = (routes) =>
+    routes?.map((route) => {
+      const { label, children, path } = route;
+
+      if (!label) return null;
+
+      if (children) {
+        return <SidebarItemCollapsable key={nanoid()} item={route} />;
+      }
+
+      if (!path) return null;
+
+      return <SidebarItem key={nanoid()} item={route} />;
+    });
 
   return (
     <Drawer variant="permanent" open={open}>
@@ -88,7 +86,7 @@ export default function Sidebar() {
         </StyledIconButton>
         <Typography variant="body2">MENU</Typography>
       </StyledToolbar>
-      <List component="nav">{generateMenuItems()}</List>
+      <List component="nav">{generateMenuItems(appRoutes)}</List>
     </Drawer>
   );
 }

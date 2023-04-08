@@ -2,15 +2,15 @@ import { RiBookLine } from "react-icons/ri";
 import { BsWindow } from "react-icons/bs";
 import { Route } from "react-router-dom";
 import { nanoid } from "nanoid";
-import NotFound from "../pages/NotFound";
-import ComingSoon from "../pages/ComingSoon";
-import Home from "../pages/home/Home";
+import NotFound from "../features/NotFound";
+import ComingSoon from "../features/ComingSoon";
+import BookSearch from "../features/books/BookSearch";
 
 export const appRoutes = [
   {
     path: "/",
     index: true,
-    element: <Home />,
+    element: <BookSearch />,
   },
   {
     path: "/cms",
