@@ -1,6 +1,5 @@
 import { RiBookLine } from "react-icons/ri";
-// import { BsWindow } from "react-icons/bs";
-import { Window } from "react-bootstrap-icons";
+import { BsWindow } from "react-icons/bs";
 import { Route } from "react-router-dom";
 import { nanoid } from "nanoid";
 import NotFound from "features/NotFound";
@@ -17,7 +16,7 @@ export const appRoutes = [
     path: "/cms",
     element: <ComingSoon />,
     label: "CONTENT MANAGEMENT",
-    icon: <Window size={20} />,
+    icon: <BsWindow size={20} />,
     children: [],
   },
   {
