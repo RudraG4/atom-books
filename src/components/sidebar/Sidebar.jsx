@@ -4,9 +4,9 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
-import styled from "@mui/material/styles/styled";
+import { styled } from "@mui/material/styles";
 import { HiMenuAlt2 } from "react-icons/hi";
-import { nanoid } from "nanoid";
+import { uuid } from "uuidv4";
 import { appRoutes } from "routes";
 import SidebarItem from "./SidebarItem";
 import SidebarItemCollapsable from "./SidebarItemCollapsable";
@@ -70,12 +70,12 @@ export default function Sidebar() {
       if (!label) return null;
 
       if (children) {
-        return <SidebarItemCollapsable key={nanoid()} item={route} />;
+        return <SidebarItemCollapsable key={uuid()} item={route} />;
       }
 
       if (!path) return null;
 
-      return <SidebarItem key={nanoid()} item={route} />;
+      return <SidebarItem key={uuid()} item={route} />;
     });
 
   return (
