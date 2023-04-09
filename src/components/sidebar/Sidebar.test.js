@@ -1,4 +1,4 @@
-import { render, cleanup, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
@@ -7,13 +7,14 @@ import { BsWindow } from "react-icons/bs";
 
 describe("Sidebar component", () => {
   const orgConsoleError = console.error;
+  let sidebarComponent;
+
   beforeEach(() => {
     console.error = jest.fn();
   });
 
   afterEach(() => {
     console.error = orgConsoleError;
-    cleanup();
   });
 
   const renderWithRouter = (component, initialEntries = ["/"]) => {
@@ -36,28 +37,29 @@ describe("Sidebar component", () => {
   });
 
   test("Should render with closed drawer", () => {
-    expect(() => {
-      renderWithRouter(<Sidebar />, ["/"]);
-    }).not.toThrow();
-
+    expect(() => renderWithRouter(<Sidebar />, ["/"])).not.toThrow();
     const drawer = screen.getByTestId("sidebar-drawer");
     const renderedWidth = getComputedStyle(drawer.firstChild).width;
     expect(renderedWidth).toBe("56px");
     expect(drawer.firstChild).not.toHaveClass("is-open");
   });
 
-  test("Should open when clicked on menu", async () => {
-    expect(() => {
-      renderWithRouter(<Sidebar />, ["/"]);
-    }).not.toThrow();
+  describe("Should open when clicked on menu and render nav items", () => {
+    test("Should open when clicked on menu", async () => {
+      expect(() => renderWithRouter(<Sidebar />, ["/"])).not.toThrow();
+      const menu = screen.getByTestId("sidebar-menu");
+      const drawer = screen.getByTestId("sidebar-drawer");
+      await userEvent.click(menu);
 
-    const menu = screen.getByTestId("sidebar-menu");
-    const drawer = screen.getByTestId("sidebar-drawer");
-    await userEvent.click(menu);
-    expect(drawer).toHaveClass("is-open");
-    const renderedWidth = getComputedStyle(drawer.firstChild).width;
-    expect(renderedWidth).toBe("300px");
+      expect(drawer).toHaveClass("is-open");
+      const renderedWidth = getComputedStyle(drawer.firstChild).width;
+      expect(renderedWidth).toBe("300px");
+    });
+
+    test("Should have nav items rendered", async () => {
+      expect(() => renderWithRouter(<Sidebar />, ["/"])).not.toThrow();
+      const sidebarNav = screen.getByTestId("sidebar-nav");
+      expect(sidebarNav.children.length).toBe(2);
+    });
   });
-
-  test("Should have nav items rendered", async () => {});
 });

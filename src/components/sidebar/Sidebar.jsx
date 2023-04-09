@@ -8,6 +8,8 @@ import { styled } from "@mui/material/styles";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { nanoid } from "nanoid";
 import { appRoutes } from "routes";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorHandler from "components/errorhandler/ErrorHandler";
 import SidebarItem from "./SidebarItem";
 import SidebarItemCollapsable from "./SidebarItemCollapsable";
 
@@ -92,7 +94,9 @@ export default function Sidebar() {
         <Typography variant="body2">MENU</Typography>
       </StyledToolbar>
       <List component="nav" data-testid="sidebar-nav">
-        {generateMenuItems(appRoutes)}
+        <ErrorBoundary fallbackRender={ErrorHandler}>
+          {generateMenuItems(appRoutes)}
+        </ErrorBoundary>
       </List>
     </Drawer>
   );

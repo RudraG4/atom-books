@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useErrorBoundary } from "react-error-boundary";
 import BookCard from "./BookCard";
-import { getFilteredBooks, getStatus, getError } from "../slice/BookSlice";
+import { getFilteredBooks, getStatus, getError } from "./slice/BookSlice";
 
 export default function BookGrid() {
   const books = useSelector(getFilteredBooks);
