@@ -102,5 +102,7 @@ describe("BookSearch component", () => {
     expect(bookGrid).not.toBeNull();
     expect(bookGrid.children.length).toBe(3);
     expect(screen.queryAllByText("GRE Prep Plus 2021").length).toBe(2);
+    expect(screen.queryAllByText(/Kaplan Test Prep/).length).toBe(2);
+    expect(screen.queryAllByText("LoremIpsum").length).toBe(1);
   });
 });
