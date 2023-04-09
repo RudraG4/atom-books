@@ -56,9 +56,4 @@ BookCard.propTypes = {
   }).isRequired,
 };
 
-BookCard.defaultProps = {
-  authors: "Unknown Authors",
-  publisher: "Unknown Publisher",
-};
-
 export default BookCard;
