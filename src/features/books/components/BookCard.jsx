@@ -6,13 +6,21 @@ import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 
 const StyledCard = styled(Card)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  backgroundColor: "#fff",
   color: theme.palette.text.secondary,
   borderLeft: "4px solid #ffa839",
 }));
 
 function BookCard(props) {
   const { book } = props;
+
+  if (!book) {
+    throw new Error("BookCard is requires 'book' prop");
+  }
+
+  if (!book.id || !book.title) {
+    throw new Error("BookCard's book prop is missing mandatory fields");
+  }
 
   return (
     <StyledCard>
@@ -21,12 +29,18 @@ function BookCard(props) {
         component={Link}
         to={`/book/${book.id}`}
       >
-        <Typography variant="h6" fontSize="1rem" fontWeight="600">
+        <Typography fontSize="1rem" fontWeight="600" data-testid="title">
           {book.title}
         </Typography>
-        <Typography variant="body2">{`Authors: ${book.authors}`}</Typography>
-        <Typography variant="body2">{`Publisher: ${book.publisher}`}</Typography>
-        <Typography variant="body2">{`Published Date: ${book.publishedDate}`}</Typography>
+        <Typography variant="body2" data-testid="authors">
+          {`Authors: ${book.authors}`}
+        </Typography>
+        <Typography variant="body2" data-testid="publisher">
+          {`Publisher: ${book.publisher}`}
+        </Typography>
+        <Typography variant="body2" data-testid="publisheddate">
+          {`Published Date: ${book.publishedDate}`}
+        </Typography>
       </CardActionArea>
     </StyledCard>
   );
@@ -36,9 +50,9 @@ BookCard.propTypes = {
   book: PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    authors: PropTypes.string.isRequired,
-    publisher: PropTypes.string.isRequired,
-    publishedDate: PropTypes.string.isRequired,
+    authors: PropTypes.string,
+    publisher: PropTypes.string,
+    publishedDate: PropTypes.string,
   }).isRequired,
 };
 

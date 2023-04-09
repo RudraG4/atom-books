@@ -4,7 +4,7 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
-import styled from "@mui/material/styles/styled";
+import { styled } from "@mui/material/styles";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { nanoid } from "nanoid";
 import { appRoutes } from "routes";
@@ -79,14 +79,21 @@ export default function Sidebar() {
     });
 
   return (
-    <Drawer variant="permanent" open={open}>
-      <StyledToolbar>
-        <StyledIconButton onClick={onToggle}>
+    <Drawer
+      variant="permanent"
+      open={open}
+      data-testid="sidebar-drawer"
+      className={`${open ? "is-open" : ""}`}
+    >
+      <StyledToolbar onClick={onToggle} data-testid="sidebar-menu">
+        <StyledIconButton>
           <HiMenuAlt2 size={20} />
         </StyledIconButton>
         <Typography variant="body2">MENU</Typography>
       </StyledToolbar>
-      <List component="nav">{generateMenuItems(appRoutes)}</List>
+      <List component="nav" data-testid="sidebar-nav">
+        {generateMenuItems(appRoutes)}
+      </List>
     </Drawer>
   );
 }

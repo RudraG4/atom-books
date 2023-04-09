@@ -1,4 +1,5 @@
-import { render, fireEvent, screen } from "@testing-library/react"; // Provides helper methods to access React VDom and Test it
+import { render, fireEvent, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import Search from "./Search";
 
 describe("Search Component", () => {
@@ -24,12 +25,13 @@ describe("Search Component", () => {
     );
   });
 
-  test("Should invoke onSearch on input", () => {
+  /** Testing component having debounce hook */
+  test("Should invoke onSearch on input", async () => {
     const onSearch = jest.fn();
     render(<Search onSearch={onSearch} />);
-    const input = screen.getByTestId("search").querySelector("input");
-    fireEvent.change(input, { target: { value: "GRE" } });
-    expect(onSearch).toHaveBeenCalled();
-    expect(input.value).toBe("GRE");
+    const input = screen.getByPlaceholderText("Search");
+    userEvent.type(input, "GRE");
+    expect(onSearch).not.toHaveBeenCalledWith("GRE");
+    await waitFor(() => expect(onSearch).toHaveBeenCalledWith("GRE"));
   });
 });
