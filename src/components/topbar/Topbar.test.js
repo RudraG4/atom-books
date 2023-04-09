@@ -6,32 +6,33 @@ import Content from "components/layout/Content";
 import { createMemoryHistory } from "history";
 
 describe("Topbar Component", () => {
-  const renderWithRouter = (component, history) => {
-    return render(
-      <Router location={history.location} navigator={history}>
-        {component}
-      </Router>
-    );
+  const renderWithRouter = (component, initialEntries = ["/"]) => {
+    const history = createMemoryHistory({ initialEntries });
+    return {
+      history,
+      ...render(
+        <Router location={history.location} navigator={history}>
+          {component}
+        </Router>
+      ),
+    };
   };
 
   test("Should be rendered without error", () => {
-    const history = createMemoryHistory({ initialEntries: ["/"] });
-    renderWithRouter(<Topbar />, history);
+    expect(() => renderWithRouter(<Topbar />)).not.toThrow();
     expect(screen.getByTestId("atom-icon")).toBeInTheDocument();
     expect(screen.getByText("atom")).toBeInTheDocument();
   });
 
   test("Should navigate to path / on atom icon click", async () => {
-    const history = createMemoryHistory({ initialEntries: ["/books"] });
-    renderWithRouter(<Topbar />, history);
+    const { history } = renderWithRouter(<Topbar />, ["/books"]);
     expect(history.location.pathname).toBe("/books");
     await userEvent.click(screen.getByTestId("atom-icon"));
     expect(history.location.pathname).toBe("/");
   });
 
   test("Should navigate to path / on atom text click", async () => {
-    const history = createMemoryHistory({ initialEntries: ["/books"] });
-    renderWithRouter(<Topbar />, history);
+    const { history } = renderWithRouter(<Topbar />, ["/books"]);
     expect(history.location.pathname).toBe("/books");
     await userEvent.click(screen.getByText("atom"));
     expect(history.location.pathname).toBe("/");
