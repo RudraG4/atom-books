@@ -16,7 +16,7 @@ export default function Topbar() {
       <Toolbar sx={{ minHeight: "54px !important" }}>
         <Link to="/">
           <Stack direction="row" alignItems="center" color="#1953d2">
-            <GiAtom size="40px" />
+            <GiAtom size="40px" data-testid="atom-icon" />
             <Typography
               variant="h4"
               fontWeight="700"

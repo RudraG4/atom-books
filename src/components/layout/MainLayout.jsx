@@ -6,13 +6,7 @@ import Sidebar from "components/sidebar/Sidebar";
 
 export default function MainLayout() {
   return (
-    <Stack
-      direction="row"
-      sx={{
-        height: "100%",
-        maxHeight: "100vh",
-      }}
-    >
+    <Stack direction="row" sx={{ height: "100%", maxHeight: "100vh" }}>
       <Sidebar />
       <Stack direction="column" flexGrow="1">
         <Topbar />

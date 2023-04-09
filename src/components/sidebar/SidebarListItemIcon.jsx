@@ -1,5 +1,5 @@
 import ListItemIcon from "@mui/material/ListItemIcon";
-import styled from "@mui/material/styles/styled";
+import { styled } from "@mui/material/styles";
 
 const SidebarListItemIcon = styled(ListItemIcon)(() => ({
   minWidth: "40px",

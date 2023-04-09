@@ -1,6 +1,6 @@
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
-import styled from "@mui/material/styles/styled";
+import { styled } from "@mui/material/styles";
 import { useState, useEffect } from "react";
 import { BiSearch } from "react-icons/bi";
 import PropTypes from "prop-types";
@@ -38,14 +38,15 @@ function Search(props) {
       value={searchTerm}
       variant="standard"
       placeholder="Search"
+      data-testid="search"
+      onChange={onChange}
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
-            <BiSearch color="text.primary" />
+            <BiSearch color="text.primary" data-testid="search-adornment" />
           </InputAdornment>
         ),
       }}
-      onChange={onChange}
     />
   );
 }
