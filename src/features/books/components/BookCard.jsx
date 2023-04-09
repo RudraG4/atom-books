@@ -21,12 +21,18 @@ function BookCard(props) {
         component={Link}
         to={`/book/${book.id}`}
       >
-        <Typography variant="h6" fontSize="1rem" fontWeight="600">
+        <Typography fontSize="1rem" fontWeight="600" data-testid="title">
           {book.title}
         </Typography>
-        <Typography variant="body2">{`Authors: ${book.authors}`}</Typography>
-        <Typography variant="body2">{`Publisher: ${book.publisher}`}</Typography>
-        <Typography variant="body2">{`Published Date: ${book.publishedDate}`}</Typography>
+        <Typography variant="body2" data-testid="authors">
+          {`Authors: ${book.authors}`}
+        </Typography>
+        <Typography variant="body2" data-testid="publisher">
+          {`Publisher: ${book.publisher}`}
+        </Typography>
+        <Typography variant="body2" data-testid="publisheddate">
+          {`Published Date: ${book.publishedDate}`}
+        </Typography>
       </CardActionArea>
     </StyledCard>
   );

@@ -1,7 +1,7 @@
 import { RiBookLine } from "react-icons/ri";
 import { BsWindow } from "react-icons/bs";
 import { Route } from "react-router-dom";
-import { uuid } from "uuidv4";
+import { nanoid } from "nanoid";
 import NotFound from "features/NotFound";
 import ComingSoon from "features/ComingSoon";
 import BookSearch from "features/books/BookSearch";
@@ -33,7 +33,7 @@ export const appRoutes = [
 
 const generateRoutes = (routes) =>
   routes.map((route) => {
-    const key = uuid();
+    const key = nanoid();
     return route.index ? (
       <Route index path={route.path} element={route.element} key={key} />
     ) : (
