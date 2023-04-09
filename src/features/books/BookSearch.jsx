@@ -7,8 +7,8 @@ import { ErrorBoundary } from "react-error-boundary";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import Search from "components/search/Search";
-import BookGrid from "./components/BookGrid";
-import ErrorHandler from "./components/ErrorHandler";
+import ErrorHandler from "components/errorhandler/ErrorHandler";
+import BookGrid from "./BookGrid";
 import { fetchBooks, searchBook } from "./slice/BookSlice";
 
 export default function BookSearch() {

@@ -13,9 +13,11 @@ export default function ErrorHandler({ resetErrorBoundary }) {
       role="alert"
     >
       <Typography component="p">Something went wrong</Typography>
-      <Button onClick={resetErrorBoundary} type="button">
-        Try again
-      </Button>
+      {resetErrorBoundary && (
+        <Button onClick={resetErrorBoundary} type="button">
+          Try again
+        </Button>
+      )}
     </Stack>
   );
 }

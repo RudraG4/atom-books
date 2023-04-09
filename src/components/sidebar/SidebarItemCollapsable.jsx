@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import List from "@mui/material/List";
+import Box from "@mui/material/Box";
 import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
 import Typography from "@mui/material/Typography";
@@ -13,6 +14,16 @@ import SidebarListItemIcon from "./SidebarListItemIcon";
 function SidebarItemCollapsable(props) {
   const [open, setOpen] = useState(false);
   const { item } = props;
+
+  if (!item) {
+    throw new Error("SidebarItemCollapsable requires an 'item' prop");
+  }
+
+  if (!item.icon || !item.label) {
+    throw new Error(
+      "SidebarItemCollapsable's item prop is missing mandatory fields"
+    );
+  }
 
   const handleToggleCollapse = () => {
     setOpen(!open);
@@ -34,27 +45,40 @@ function SidebarItemCollapsable(props) {
     });
 
   return (
-    <>
-      <SidebarListItemButton onClick={handleToggleCollapse}>
+    <Box
+      display="flex"
+      flexDirection="column"
+      data-testid="sidebar-collapse-box"
+    >
+      <SidebarListItemButton
+        onClick={handleToggleCollapse}
+        data-testid="sidebar-collapse-btn"
+      >
         <SidebarListItemIcon>{item.icon}</SidebarListItemIcon>
         <ListItemText
           primary={<Typography variant="body2">{item.label}</Typography>}
         />
         {open ? <MdExpandLess /> : <MdExpandMore />}
       </SidebarListItemButton>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
+      <Collapse
+        in={open}
+        timeout="auto"
+        unmountOnExit
+        data-testid="sidebar-collapse-body"
+        sx={{ paddingLeft: "14px" }}
+      >
+        <List component="ul" disablePadding>
           {generateMenuItems(item.children)}
         </List>
       </Collapse>
-    </>
+    </Box>
   );
 }
 
 SidebarItemCollapsable.propTypes = {
   item: PropTypes.shape({
     label: PropTypes.string.isRequired,
-    icon: PropTypes.element,
+    icon: PropTypes.element.isRequired,
     children: PropTypes.arrayOf(
       PropTypes.shape({
         path: PropTypes.string.isRequired,
