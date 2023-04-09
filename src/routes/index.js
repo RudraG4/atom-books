@@ -17,33 +17,7 @@ export const appRoutes = [
     element: <ComingSoon />,
     label: "CONTENT MANAGEMENT",
     icon: <BsWindow size={20} />,
-    children: [
-      {
-        path: "/cms/courses1",
-        element: <ComingSoon />,
-        label: "COURSES1",
-        icon: <RiBookLine size={20} />,
-      },
-      {
-        element: <ComingSoon />,
-        label: "COURSES2",
-        icon: <RiBookLine size={20} />,
-        children: [
-          {
-            path: "/cms/courses1/courses3",
-            element: <ComingSoon />,
-            label: "COURSES3",
-            icon: <RiBookLine size={20} />,
-          },
-          {
-            path: "/cms/courses1/courses4",
-            element: <ComingSoon />,
-            label: "COURSES4",
-            icon: "",
-          },
-        ],
-      },
-    ],
+    children: [],
   },
   {
     path: "/courses",

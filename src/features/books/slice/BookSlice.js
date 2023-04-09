@@ -7,22 +7,25 @@ const BOOK_URL =
 /** Create Async Actions */
 export const fetchBooks = createAsyncThunk("books/fetchBooks", async () => {
   const response = await axios.get(BOOK_URL);
-  const result = {
-    total: response.data.totalItems || 0,
-    results: response.data.items?.map((book) => ({
-      id: book.id,
-      title: book.volumeInfo?.title,
-      authors: book.volumeInfo?.authors.join(","),
-      publisher: book.volumeInfo?.publisher,
-      publishedDate: book.volumeInfo?.publishedDate,
-    })),
-  };
+  let result = { total: 0, results: [] };
+  if (response?.data?.items?.length) {
+    result = {
+      total: response.data.totalItems || 0,
+      results: response.data.items?.map((book) => ({
+        id: book.id,
+        title: book.volumeInfo?.title,
+        authors: book.volumeInfo?.authors.join(","),
+        publisher: book.volumeInfo?.publisher,
+        publishedDate: book.volumeInfo?.publishedDate,
+      })),
+    };
+  }
   return result;
 });
 
 const initialState = {
   error: null,
-  status: "idle",
+  status: "done",
   total: 0,
   books: [],
   filteredBooks: [],
