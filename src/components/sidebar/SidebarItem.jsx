@@ -1,18 +1,29 @@
-import { NavLink } from 'react-router-dom';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
-import SidebarListItemButton from './SidebarListItemButton';
-import SidebarListItemIcon from './SidebarListItemIcon';
+import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
+import ListItemText from "@mui/material/ListItemText";
+import Typography from "@mui/material/Typography";
+import SidebarListItemButton from "./SidebarListItemButton";
+import SidebarListItemIcon from "./SidebarListItemIcon";
 
-export default function SidebarItem({ item }) {
-	const { label, icon, path } = item;
+function SidebarItem(props) {
+  const { item } = props;
 
-	if (!path || !label || !icon) return;
-
-	return (
-		<SidebarListItemButton component={NavLink} to={path}>
-			<SidebarListItemIcon>{icon}</SidebarListItemIcon>
-			<ListItemText primary={<Typography variant="body2">{label}</Typography>} />
-		</SidebarListItemButton>
-	);
+  return (
+    <SidebarListItemButton component={NavLink} to={item.path}>
+      <SidebarListItemIcon>{item.icon}</SidebarListItemIcon>
+      <ListItemText
+        primary={<Typography variant="body2">{item.label}</Typography>}
+      />
+    </SidebarListItemButton>
+  );
 }
+
+SidebarItem.propTypes = {
+  item: PropTypes.shape({
+    path: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    icon: PropTypes.element,
+  }).isRequired,
+};
+
+export default SidebarItem;
