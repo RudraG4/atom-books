@@ -31,7 +31,8 @@ function Search(props) {
 
   useEffect(() => {
     onSearch(debnSearchTerm);
-  }, [onSearch, debnSearchTerm]);
+    // eslint-disable-next-line
+  }, [debnSearchTerm]);
 
   return (
     <StyledTextField
