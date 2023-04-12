@@ -1,7 +1,7 @@
 
 # atom-books
 
-An Atom Book Search app created using React
+An Atom Book Search app created using React, Redux, React Router, Material UI
 
 
 ## Cloning the project
