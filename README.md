@@ -1,5 +1,5 @@
 
-# atom-book
+# atom-books
 
 An Atom Book Search app created using React
 
