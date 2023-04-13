@@ -1,5 +1,5 @@
 {
-  "name": "atom-book-search",
+  "name": "atom-books",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
@@ -36,7 +36,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.jsx\" --fix --max-warnings=0"
   },
