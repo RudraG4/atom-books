@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
+  "license": "MIT",
   "main": "src/index.jsx",
   "dependencies": {
     "@emotion/react": "11.10.6",
