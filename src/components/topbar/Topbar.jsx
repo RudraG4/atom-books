@@ -13,7 +13,7 @@ export default function Topbar() {
   };
 
   return (
-    <AppBar position="sticky" sx={appBarStyle}>
+    <AppBar position="sticky" sx={appBarStyle} data-testid="topbar">
       <Toolbar sx={{ minHeight: "54px !important" }}>
         <Link to="/">
           <Stack direction="row" alignItems="center" color="#1953d2">

@@ -12,11 +12,11 @@ export default function MainLayout() {
 
   return (
     <Stack direction="row" sx={{ height: "100%", maxHeight: "100vh" }}>
-      <Sidebar data-testid="sidebar" />
+      <Sidebar />
       <Stack direction="column" flexGrow="1">
-        <Topbar data-testid="topbar" />
+        <Topbar />
         <ErrorBoundary fallbackRender={ErrorHandler} onReset={onReset}>
-          <Content data-testid="content" />
+          <Content />
         </ErrorBoundary>
       </Stack>
     </Stack>

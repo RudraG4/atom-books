@@ -9,7 +9,7 @@ export default function Content() {
     overflow: "auto",
   };
   return (
-    <Box component="main" sx={mainStyle}>
+    <Box component="main" sx={mainStyle} data-testid="content">
       <Outlet />
     </Box>
   );
