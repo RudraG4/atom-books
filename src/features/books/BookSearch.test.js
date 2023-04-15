@@ -7,8 +7,8 @@ import axios from "axios";
 import { nanoid } from "nanoid";
 import { createMemoryHistory } from "history";
 import { ErrorBoundary } from "react-error-boundary";
-import BookReducer, { fetchBooks } from "./slice/BookSlice";
 import ErrorHandler from "components/errorhandler/ErrorHandler";
+import BookReducer, { fetchBooks } from "./slice/BookSlice";
 import BookSearch from "./BookSearch";
 
 const mockBookData = {
@@ -122,7 +122,7 @@ describe("BookSearch component", () => {
     expect(bookGrid).not.toBeNull();
     expect(bookGrid.children.length).toBe(3);
 
-    const searchInput = screen.getByPlaceholderText("Search");
+    const searchInput = screen.getByPlaceholderText(/Search/i);
     await userEvent.type(searchInput, "GRE");
     await waitFor(
       () => {

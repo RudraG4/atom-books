@@ -39,7 +39,10 @@ export default function BookGrid() {
   return (
     <Box>
       <Box mb={3}>
-        <Search onSearch={onSearch} />
+        <Search
+          onSearch={onSearch}
+          placeholder="Search title, author, publisher"
+        />
       </Box>
       <Box mb={3}>
         <Typography variant="body1" fontWeight="600" color="text.secondary">

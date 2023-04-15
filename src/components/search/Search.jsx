@@ -22,7 +22,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
 function Search(props) {
   const [searchTerm, setSearchTerm] = useState("");
   const debnSearchTerm = useDebounce(searchTerm);
-  const { onSearch } = props;
+  const { onSearch, placeholder } = props;
 
   const onChange = (event) => {
     const { value } = event.target;
@@ -38,7 +38,7 @@ function Search(props) {
     <StyledTextField
       value={searchTerm}
       variant="standard"
-      placeholder="Search"
+      placeholder={placeholder || "Search"}
       data-testid="search"
       onChange={onChange}
       InputProps={{

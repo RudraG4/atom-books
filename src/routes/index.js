@@ -5,12 +5,18 @@ import { nanoid } from "nanoid";
 import NotFound from "features/NotFound";
 import ComingSoon from "features/ComingSoon";
 import BookSearch from "features/books/BookSearch";
+import BookInfo from "features/books/BookInfo";
 
 export const appRoutes = [
   {
     path: "/",
     index: true,
     element: <BookSearch />,
+  },
+  {
+    path: "/book/:bookId",
+    element: <BookInfo />,
+    children: [],
   },
   {
     path: "/cms",

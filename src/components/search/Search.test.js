@@ -14,9 +14,10 @@ describe("Search Component", () => {
   });
 
   test("Should render without error", () => {
-    render(<Search />);
+    render(<Search placeholder="Search title" />);
     expect(screen.getByTestId("search")).toBeInTheDocument();
     expect(screen.getByTestId("search-adornment")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/Search title/i)).toBeInTheDocument();
   });
 
   test("Should throw error if onSearch is not a function", () => {
@@ -29,7 +30,7 @@ describe("Search Component", () => {
   test("Should invoke onSearch on input", async () => {
     const onSearch = jest.fn();
     render(<Search onSearch={onSearch} />);
-    const input = screen.getByPlaceholderText("Search");
+    const input = screen.getByPlaceholderText(/Search/i);
     userEvent.type(input, "GRE");
     expect(onSearch).not.toHaveBeenCalledWith("GRE");
     await waitFor(() => expect(onSearch).toHaveBeenCalledWith("GRE"));

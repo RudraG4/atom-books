@@ -14,12 +14,17 @@ const root = createRoot(rootElement);
 const theme = createTheme({
   typography: {
     fontFamily: [
+      "Inter",
+      "Poppins",
+      "Quicksand",
       "Roboto",
-      "Montserrat",
       "Helvetica",
       "Arial",
       "sans-serif",
     ].join(","),
+    h1: {
+      fontSize: "4.38rem",
+    },
   },
   palette: {
     primary: {

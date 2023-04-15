@@ -53,9 +53,8 @@ describe("Application Test", () => {
 
   afterEach(cleanup);
 
-  const renderWithContext = (component) => {
-    return render(<Provider store={store}>{component}</Provider>);
-  };
+  const renderWithContext = (component) =>
+    render(<Provider store={store}>{component}</Provider>);
 
   test("Should render without error", async () => {
     axios.get.mockResolvedValueOnce(mockBookData);
@@ -70,30 +69,6 @@ describe("Application Test", () => {
     expect(getByTestId("sidebar-drawer")).toBeInTheDocument();
     expect(getByTestId("topbar")).toBeInTheDocument();
     expect(getByTestId("content")).toBeInTheDocument();
-    await unmount();
-  });
-
-  test("Show 404 not found on clicking book card", async () => {
-    axios.get.mockResolvedValueOnce(mockBookData);
-    await store.dispatch(fetchBooks());
-    const { queryByTestId, queryByText, unmount } = renderWithContext(<App />);
-
-    let bookGrid = screen.queryByTestId("book-grid");
-    expect(bookGrid).not.toBeNull();
-    expect(bookGrid.children.length).toBe(3);
-    const actionArea = bookGrid.children[0].querySelector(
-      "a.MuiCardActionArea-root"
-    );
-    await userEvent.click(actionArea);
-    await waitFor(
-      () => {
-        expect(
-          queryByText(/The page you are looking for is not found/)
-        ).toBeInTheDocument();
-        expect(queryByText("404")).toBeInTheDocument();
-      },
-      { interval: 1000, timeout: 5001 }
-    );
     await unmount();
   });
 

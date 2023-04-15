@@ -1,12 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const BOOK_URL =
-  "https://www.googleapis.com/books/v1/volumes?q=kaplan%20test%20prep";
+const BASE_BOOK_URL = "https://www.googleapis.com/books/v1/volumes";
 
 /** Create Async Actions */
 export const fetchBooks = createAsyncThunk("books/fetchBooks", async () => {
-  const response = await axios.get(BOOK_URL);
+  const response = await axios.get(`${BASE_BOOK_URL}?q=kaplan%20test%20prep`);
   let result = { total: 0, results: [] };
   if (response?.data?.items?.length) {
     result = {
@@ -22,6 +21,37 @@ export const fetchBooks = createAsyncThunk("books/fetchBooks", async () => {
   }
   return result;
 });
+
+export const fetchBookById = createAsyncThunk(
+  "books/fetchBookById",
+  async (bookId) => {
+    const response = await axios.get(`${BASE_BOOK_URL}/${bookId}`);
+    if (response?.data) {
+      const book = response?.data;
+      const volumeInfo = book.volumeInfo || {};
+      const isbns =
+        volumeInfo.industryIdentifiers
+          ?.filter((ident) => ident.type.includes("ISBN"))
+          .map((_iden) => _iden.identifier)
+          .join(", ") || "";
+      const bookCover =
+        volumeInfo.imageLinks?.medium || volumeInfo.imageLinks?.thumbnail;
+      return {
+        id: book.id,
+        title: volumeInfo.title,
+        subtitle: volumeInfo.subtitle,
+        authors: volumeInfo.authors?.join(",") || "",
+        publisher: volumeInfo.publisher,
+        publishedDate: volumeInfo.publishedDate,
+        isbns,
+        pageCount: volumeInfo.pageCount,
+        bookCover,
+        description: volumeInfo.description,
+      };
+    }
+    return null;
+  }
+);
 
 const initialState = {
   error: null,
@@ -40,8 +70,11 @@ const bookSlice = createSlice({
       const searchTerm = action.payload;
       let filteredBooks;
       if (searchTerm) {
-        filteredBooks = state.books.filter((book) =>
-          book.title.toLowerCase().includes(searchTerm?.toLowerCase())
+        filteredBooks = state.books.filter(
+          (book) =>
+            book.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            book.authors?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            book.publisher?.toLowerCase().includes(searchTerm.toLowerCase())
         );
       } else {
         filteredBooks = state.books;

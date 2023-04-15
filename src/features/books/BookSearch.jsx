@@ -20,7 +20,7 @@ export default function BookSearch() {
     <Container maxWidth="lg" sx={{ px: "0 !important" }}>
       <Box mb={3}>
         <Stack direction="row" justifyContent="space-between">
-          <Typography variant="h4" component="h4" fontWeight="600">
+          <Typography variant="h4" component="h1" fontWeight="600">
             Books
           </Typography>
           <Button
