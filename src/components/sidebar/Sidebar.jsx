@@ -14,90 +14,90 @@ import SidebarItem from "./SidebarItem";
 import SidebarItemCollapsable from "./SidebarItemCollapsable";
 
 const Drawer = styled(MuiDrawer, {
-  shouldForwardProp: (prop) => prop !== "open",
+    shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
-  "& .MuiDrawer-paper": {
-    position: "relative",
-    whiteSpace: "nowrap",
-    overflowX: "hidden",
-    color: theme.palette.text.secondary,
-    fontWeight: 400,
-    width: 300,
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    boxSizing: "border-box",
-    ...(!open && {
-      transition: theme.transitions.create("width", {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
-      width: theme.spacing(7),
-    }),
-    [theme.breakpoints.down("sm")]: {
-      ...(open && {
-        position: "absolute",
-      }),
+    "& .MuiDrawer-paper": {
+        position: "relative",
+        whiteSpace: "nowrap",
+        overflowX: "hidden",
+        color: theme.palette.text.secondary,
+        fontWeight: 400,
+        width: 300,
+        transition: theme.transitions.create("width", {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.enteringScreen,
+        }),
+        boxSizing: "border-box",
+        ...(!open && {
+            transition: theme.transitions.create("width", {
+                easing: theme.transitions.easing.sharp,
+                duration: theme.transitions.duration.leavingScreen,
+            }),
+            width: theme.spacing(7),
+        }),
+        [theme.breakpoints.down("sm")]: {
+            ...(open && {
+                position: "absolute",
+            }),
+        },
     },
-  },
 }));
 
 const StyledIconButton = styled(IconButton)(() => ({
-  minWidth: "40px",
-  justifyContent: "center",
-  marginRight: "10px",
+    minWidth: "40px",
+    justifyContent: "center",
+    marginRight: "10px",
 }));
 
 const StyledToolbar = styled(Toolbar)(() => ({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "flex-start",
-  padding: "6px !important",
-  minHeight: "54px !important",
-  height: "54px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    padding: "6px !important",
+    minHeight: "54px !important",
+    height: "54px",
 }));
 
 export default function Sidebar() {
-  const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false);
 
-  const onToggle = () => {
-    setOpen(!open);
-  };
+    const onToggle = () => {
+        setOpen(!open);
+    };
 
-  const generateMenuItems = (routes) =>
-    routes?.map((route) => {
-      const { label, children, path } = route;
+    const generateMenuItems = (routes) =>
+        routes?.map((route) => {
+            const { label, children, path } = route;
 
-      if (!label) return null;
+            if (!label) return null;
 
-      if (children) {
-        return <SidebarItemCollapsable key={nanoid()} item={route} />;
-      }
+            if (children) {
+                return <SidebarItemCollapsable key={nanoid()} item={route} />;
+            }
 
-      if (!path) return null;
+            if (!path) return null;
 
-      return <SidebarItem key={nanoid()} item={route} />;
-    });
+            return <SidebarItem key={nanoid()} item={route} />;
+        });
 
-  return (
-    <Drawer
-      variant="permanent"
-      open={open}
-      data-testid="sidebar-drawer"
-      className={`${open ? "is-open" : ""}`}
-    >
-      <StyledToolbar onClick={onToggle} data-testid="sidebar-menu">
-        <StyledIconButton>
-          <HiMenuAlt2 size={20} />
-        </StyledIconButton>
-        <Typography variant="body2">MENU</Typography>
-      </StyledToolbar>
-      <List component="nav" data-testid="sidebar-nav">
-        <ErrorBoundary fallbackRender={ErrorHandler}>
-          {generateMenuItems(appRoutes)}
-        </ErrorBoundary>
-      </List>
-    </Drawer>
-  );
+    return (
+        <Drawer
+            variant="permanent"
+            open={open}
+            data-testid="sidebar-drawer"
+            className={`${open ? "is-open" : ""}`}
+        >
+            <StyledToolbar onClick={onToggle} data-testid="sidebar-menu">
+                <StyledIconButton>
+                    <HiMenuAlt2 size={20} />
+                </StyledIconButton>
+                <Typography variant="body2">MENU</Typography>
+            </StyledToolbar>
+            <List component="nav" data-testid="sidebar-nav">
+                <ErrorBoundary fallbackRender={ErrorHandler}>
+                    {generateMenuItems(appRoutes)}
+                </ErrorBoundary>
+            </List>
+        </Drawer>
+    );
 }

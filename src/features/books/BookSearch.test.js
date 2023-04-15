@@ -12,139 +12,154 @@ import BookReducer, { fetchBooks } from "./slice/BookSlice";
 import BookSearch from "./BookSearch";
 
 const mockBookData = {
-  data: {
-    totalItems: 3,
-    items: [
-      {
-        id: nanoid(),
-        volumeInfo: {
-          title: "GRE Prep Plus 2021",
-          authors: ["Kaplan Test Prep"],
-          publisher: "Kaplan Publishing",
-          publishedDate: "2020-06-02",
-        },
-      },
-      {
-        id: nanoid(),
-        volumeInfo: {
-          title: "GRE Prep Plus 2021",
-          authors: ["Kaplan Test Prep"],
-          publisher: "Kaplan Publishing",
-          publishedDate: "2020-06-02",
-        },
-      },
-      {
-        id: nanoid(),
-        volumeInfo: {
-          title: "LoremIpsum",
-          authors: ["Kaplan"],
-          publisher: "Kaplan Publishing",
-          publishedDate: "2020-06-02",
-        },
-      },
-    ],
-  },
+    data: {
+        totalItems: 3,
+        items: [
+            {
+                id: nanoid(),
+                volumeInfo: {
+                    title: "GRE Prep Plus 2021",
+                    authors: ["Kaplan Test Prep"],
+                    publisher: "Kaplan Publishing",
+                    publishedDate: "2020-06-02",
+                },
+            },
+            {
+                id: nanoid(),
+                volumeInfo: {
+                    title: "GRE Prep Plus 2021",
+                    authors: ["Kaplan Test Prep"],
+                    publisher: "Kaplan Publishing",
+                    publishedDate: "2020-06-02",
+                },
+            },
+            {
+                id: nanoid(),
+                volumeInfo: {
+                    title: "LoremIpsum",
+                    authors: ["Kaplan"],
+                    publisher: "Simson",
+                    publishedDate: "2020-06-02",
+                },
+            },
+        ],
+    },
 };
 
 jest.mock("axios");
 
 describe("BookSearch component", () => {
-  const orgConsoleError = console.error;
+    let store;
 
-  let store;
-
-  beforeEach(() => {
-    console.error = jest.fn();
-    store = configureStore({
-      reducer: {
-        books: BookReducer,
-      },
+    beforeEach(() => {
+        store = configureStore({
+            reducer: {
+                books: BookReducer,
+            },
+        });
     });
-  });
 
-  afterEach(() => {
-    console.error = orgConsoleError;
-    store = null;
-    cleanup();
-  });
+    afterEach(() => {
+        store = null;
+        cleanup();
+    });
 
-  const renderWithContext = (component, initialEntries = ["/"]) => {
-    const history = createMemoryHistory({ initialEntries });
-    return {
-      history,
-      ...render(
-        <Router location={history.location} navigator={history}>
-          <Provider store={store}>
-            <ErrorBoundary fallbackRender={ErrorHandler}>
-              {component}
-            </ErrorBoundary>
-          </Provider>
-        </Router>
-      ),
+    const renderWithContext = (component, initialEntries = ["/"]) => {
+        const history = createMemoryHistory({ initialEntries });
+        return {
+            history,
+            ...render(
+                <Router location={history.location} navigator={history}>
+                    <Provider store={store}>
+                        <ErrorBoundary fallbackRender={ErrorHandler}>
+                            {component}
+                        </ErrorBoundary>
+                    </Provider>
+                </Router>
+            ),
+        };
     };
-  };
 
-  test("Should render without error", () => {
-    expect(() => renderWithContext(<BookSearch />)).not.toThrow();
-  });
+    test("Should render without error, fetch books and load the datagrid", async () => {
+        axios.get.mockResolvedValueOnce(mockBookData);
+        store.dispatch(fetchBooks());
 
-  test("Should fetch books and load the datagrid", async () => {
-    renderWithContext(<BookSearch />);
+        renderWithContext(<BookSearch />);
 
-    expect(screen.getByText(/^Books$/i)).toBeInTheDocument();
-    expect(screen.getByText(/^Create New Book$/i)).toBeInTheDocument();
+        expect(screen.getByText(/^Books$/i)).toBeInTheDocument();
+        expect(screen.getByText(/^Create New Book$/i)).toBeInTheDocument();
+        expect(screen.queryByText(/^Loading Books...$/i)).toBeInTheDocument();
 
-    expect(screen.getByText(/^No Data$/i)).toBeInTheDocument();
-    expect(screen.queryByText(/^Loading Books...$/i)).not.toBeInTheDocument();
+        await waitFor(() => {
+            expect(store.getState().books.books.length).not.toBe(0);
+            expect(store.getState().books.status).toBe("done");
+            expect(store.getState().books.error).toBeNull();
+        }, { interval: 1000, timeout: 5000 });
 
-    axios.get.mockResolvedValueOnce(mockBookData);
-    await store.dispatch(fetchBooks());
+        const bookGrid = screen.queryByTestId("book-grid");
+        expect(bookGrid).not.toBeNull();
+        expect(bookGrid.children.length).toBe(3);
 
-    expect(store.getState().books.books.length).not.toBe(0);
-    expect(store.getState().books.status).toBe("done");
-    expect(store.getState().books.error).toBeNull();
+        expect(screen.queryAllByText("GRE Prep Plus 2021").length).toBe(2);
+        expect(screen.queryAllByText(/Kaplan Test Prep/).length).toBe(2);
+        expect(screen.queryAllByText("LoremIpsum").length).toBe(1);
+    });
 
-    const bookGrid = screen.queryByTestId("book-grid");
-    expect(bookGrid).not.toBeNull();
-    expect(bookGrid.children.length).toBe(3);
-    expect(screen.queryAllByText("GRE Prep Plus 2021").length).toBe(2);
-    expect(screen.queryAllByText(/Kaplan Test Prep/).length).toBe(2);
-    expect(screen.queryAllByText("LoremIpsum").length).toBe(1);
-  });
+    test("Should able to filter records by title, author, publisher", async () => {
+        axios.get.mockResolvedValueOnce(mockBookData);
+        await store.dispatch(fetchBooks());
 
-  test("Should able to filter records with searchterm 'GRE' ", async () => {
-    axios.get.mockResolvedValueOnce(mockBookData);
-    await store.dispatch(fetchBooks());
+        renderWithContext(<BookSearch />);
 
-    renderWithContext(<BookSearch />);
+        let bookGrid = screen.queryByTestId("book-grid");
+        expect(bookGrid).not.toBeNull();
+        expect(bookGrid.children.length).toBe(3);
 
-    const bookGrid = screen.queryByTestId("book-grid");
-    expect(bookGrid).not.toBeNull();
-    expect(bookGrid.children.length).toBe(3);
+        const searchInput = screen.getByPlaceholderText(/Search/i);
+        await userEvent.type(searchInput, "GRE");
+        await waitFor(
+            () => {
+                bookGrid = screen.queryByTestId("book-grid");
+                expect(bookGrid.children.length).toBe(2);
+                expect(screen.queryByText("Results for 'GRE'")).toBeInTheDocument();
+            },
+            { interval: 1000, timeout: 2001 }
+        );
 
-    const searchInput = screen.getByPlaceholderText(/Search/i);
-    await userEvent.type(searchInput, "GRE");
-    await waitFor(
-      () => {
-        expect(bookGrid.children.length).toBe(2);
-        expect(screen.queryByText("Results for 'GRE'")).toBeInTheDocument();
-      },
-      { interval: 1000, timeout: 2001 }
-    );
-  });
+        await userEvent.clear(searchInput);
+        await userEvent.type(searchInput, "Simson");
+        await waitFor(
+            () => {
+                bookGrid = screen.queryByTestId("book-grid");
+                expect(bookGrid.children.length).toBe(1);
+                expect(screen.queryByText("Results for 'Simson'")).toBeInTheDocument();
+            },
+            { interval: 1000, timeout: 2001 }
+        );
 
-  test("Should render Error Boundary Fallback component", async () => {
-    axios.get.mockRejectedValueOnce({ message: "500 internal server error" });
-    await store.dispatch(fetchBooks());
+        await userEvent.clear(searchInput);
+        await userEvent.type(searchInput, "Kaplan Test Prep");
+        await waitFor(
+            () => {
+                bookGrid = screen.queryByTestId("book-grid");
+                expect(bookGrid.children.length).toBe(2);
+                expect(screen.queryByText("Results for 'Kaplan Test Prep'")).toBeInTheDocument();
+            },
+            { interval: 1000, timeout: 2001 }
+        );
+    });
 
-    renderWithContext(<BookSearch />);
+    test("Should render Error Boundary Fallback component", async () => {
+        axios.get.mockRejectedValueOnce({ message: "500 internal server error" });
+        store.dispatch(fetchBooks());
 
-    expect(screen.queryByText(/Something went wrong/)).toBeInTheDocument();
-    const tryAgainButton = screen.queryByText(/Try Again/i);
-    expect(tryAgainButton).toBeInTheDocument();
+        renderWithContext(<BookSearch />);
 
-    await userEvent.click(tryAgainButton);
+        await waitFor(() => expect(screen.queryByText(/Something went wrong/)).toBeInTheDocument());
 
-    expect(screen.queryByText(/No Data|Loading/i)).toBeInTheDocument();
-  });
+        const tryAgainButton = screen.queryByText(/Try Again/i);
+        expect(tryAgainButton).toBeInTheDocument();
+        await userEvent.click(tryAgainButton);
+        expect(screen.queryByText(/No Data|Loading/i)).toBeInTheDocument();
+    });
 });

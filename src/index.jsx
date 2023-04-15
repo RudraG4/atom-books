@@ -12,45 +12,45 @@ const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 const theme = createTheme({
-  typography: {
-    fontFamily: [
-      "Inter",
-      "Poppins",
-      "Quicksand",
-      "Roboto",
-      "Helvetica",
-      "Arial",
-      "sans-serif",
-    ].join(","),
-    h1: {
-      fontSize: "4.38rem",
+    typography: {
+        fontFamily: [
+            "Inter",
+            "Poppins",
+            "Quicksand",
+            "Roboto",
+            "Helvetica",
+            "Arial",
+            "sans-serif",
+        ].join(","),
+        h1: {
+            fontSize: "4.38rem",
+        },
     },
-  },
-  palette: {
-    primary: {
-      main: "#2751bf",
+    palette: {
+        primary: {
+            main: "#2751bf",
+        },
+        secondary: {
+            main: "#6b6b6b",
+        },
+        text: {
+            primary: "#000000de",
+            secondary: "#465b75",
+        },
     },
-    secondary: {
-      main: "#6b6b6b",
-    },
-    text: {
-      primary: "#000000de",
-      secondary: "#465b75",
-    },
-  },
 });
 
 store.dispatch(fetchBooks());
 
 function Main() {
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </ThemeProvider>
-  );
+    return (
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </ThemeProvider>
+    );
 }
 
 root.render(<Main />);
