@@ -1,57 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-
-const BASE_BOOK_URL = "https://www.googleapis.com/books/v1/volumes";
+import BooksAPI from "api/books";
 
 /** Create Async Actions */
-export const fetchBooks = createAsyncThunk("books/fetchBooks", async () => {
-    const response = await axios.get(`${BASE_BOOK_URL}?q=kaplan%20test%20prep`);
-    let result = { total: 0, results: [] };
-    if (response?.data?.items?.length) {
-        result = {
-            total: response.data.totalItems || 0,
-            results: response.data.items?.map((book) => ({
-                id: book.id,
-                title: book.volumeInfo?.title,
-                authors: book.volumeInfo?.authors.join(","),
-                publisher: book.volumeInfo?.publisher,
-                publishedDate: book.volumeInfo?.publishedDate,
-            })),
-        };
-    }
-    return result;
-});
+export const fetchBooks = createAsyncThunk("books/fetchBooks", () => BooksAPI.fetchBooks());
 
-export const fetchBookById = createAsyncThunk(
-    "books/fetchBookById",
-    async (bookId) => {
-        const response = await axios.get(`${BASE_BOOK_URL}/${bookId}`);
-        if (response?.data) {
-            const book = response?.data;
-            const volumeInfo = book.volumeInfo || {};
-            const isbns =
-        volumeInfo.industryIdentifiers
-            ?.filter((ident) => ident.type.includes("ISBN"))
-            .map((_iden) => _iden.identifier)
-            .join(", ") || "";
-            const bookCover =
-        volumeInfo.imageLinks?.medium || volumeInfo.imageLinks?.thumbnail;
-            return {
-                id: book.id,
-                title: volumeInfo.title,
-                subtitle: volumeInfo.subtitle,
-                authors: volumeInfo.authors?.join(",") || "",
-                publisher: volumeInfo.publisher,
-                publishedDate: volumeInfo.publishedDate,
-                isbns,
-                pageCount: volumeInfo.pageCount,
-                bookCover,
-                description: volumeInfo.description,
-            };
-        }
-        return null;
-    }
-);
+export const fetchBookById = createAsyncThunk("books/fetchBookById", (bookId) => BooksAPI.fetchBookById(bookId));
 
 const initialState = {
     error: null,
@@ -73,8 +26,8 @@ const bookSlice = createSlice({
                 filteredBooks = state.books.filter(
                     (book) =>
                         book.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            book.authors?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            book.publisher?.toLowerCase().includes(searchTerm.toLowerCase())
+                        book.authors?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        book.publisher?.toLowerCase().includes(searchTerm.toLowerCase())
                 );
             } else {
                 filteredBooks = state.books;

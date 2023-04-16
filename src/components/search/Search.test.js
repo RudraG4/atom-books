@@ -3,6 +3,15 @@ import userEvent from "@testing-library/user-event";
 import Search from "./Search";
 
 describe("Search Component", () => {
+    const orgConsoleError = console.error;
+    beforeEach(() => {
+        console.error = jest.fn();
+    });
+
+    afterEach(() => {
+        console.error = orgConsoleError;
+    });
+
     test("Should render without error", () => {
         render(<Search placeholder="Search title" />);
         expect(screen.getByTestId("search")).toBeInTheDocument();
@@ -11,9 +20,7 @@ describe("Search Component", () => {
     });
 
     test("Should throw error if onSearch is not a function", () => {
-        expect(() => render(<Search onSearch="" />)).toThrow(
-            "onSearch is not a function"
-        );
+        expect(() => render(<Search onSearch="" />)).toThrow("onSearch is not a function");
     });
 
     /** Testing component having debounce hook */

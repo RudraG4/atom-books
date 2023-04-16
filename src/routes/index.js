@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 import NotFound from "features/NotFound";
 import ComingSoon from "features/ComingSoon";
 import BookSearch from "features/books/BookSearch";
-import BookInfo from "features/books/BookInfo";
+import BookInfo from "features/books/components/BookInfo/BookInfo";
 
 export const appRoutes = [
     {
