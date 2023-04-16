@@ -4,6 +4,16 @@ import { ErrorBoundary } from "react-error-boundary";
 import ErrorHandler from "./ErrorHandler";
 
 describe("ErrorHandler component", () => {
+    const orgConsoleError = console.error;
+
+    beforeEach(() => {
+        console.error = jest.fn();
+    });
+
+    afterEach(() => {
+        console.error = orgConsoleError;
+    });
+
     test("Render ErrorHandler on error", async () => {
         const onReset = jest.fn();
         const CompWithError = () => {

@@ -50,6 +50,7 @@ jest.mock("axios");
 
 describe("BookSearch component", () => {
     let store;
+    const orgConsoleError = console.error;
 
     beforeEach(() => {
         store = configureStore({
@@ -57,10 +58,12 @@ describe("BookSearch component", () => {
                 books: BookReducer,
             },
         });
+        console.error = jest.fn();
     });
 
     afterEach(() => {
         store = null;
+        console.error = orgConsoleError;
         cleanup();
     });
 
@@ -86,9 +89,9 @@ describe("BookSearch component", () => {
 
         renderWithContext(<BookSearch />);
 
-        expect(screen.getByText(/^Books$/i)).toBeInTheDocument();
-        expect(screen.getByText(/^Create New Book$/i)).toBeInTheDocument();
-        expect(screen.queryByText(/^Loading Books...$/i)).toBeInTheDocument();
+        expect(screen.queryByText(/^Books$/i)).toBeInTheDocument();
+        expect(screen.queryByText(/^Create New Book$/i)).toBeInTheDocument();
+        expect(screen.queryByTestId("loading")).toBeInTheDocument();
 
         await waitFor(() => {
             expect(store.getState().books.books.length).not.toBe(0);

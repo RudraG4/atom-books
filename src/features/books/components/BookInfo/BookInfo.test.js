@@ -6,7 +6,7 @@ import { createMemoryHistory } from "history";
 import { ErrorBoundary } from "react-error-boundary";
 import axios from "axios";
 import ErrorHandler from "components/errorhandler/ErrorHandler";
-import BookReducer from "./slice/BookSlice";
+import BookReducer from "../../slice/BookSlice";
 import BookInfo from "./BookInfo";
 
 const mockBookData = {
@@ -63,8 +63,8 @@ describe("BookInfo component", () => {
     test("Should render without error", async () => {
         const { volumeInfo } = mockBookData.data;
         axios.get.mockResolvedValueOnce(mockBookData);
-        const { getByText } = renderWithContext(<BookInfo />, ["/book/Wl-2DwAAQBAJ"]);
-        expect(getByText("Loading...")).toBeInTheDocument();
+        const { getByText, getByTestId } = renderWithContext(<BookInfo />, ["/book/Wl-2DwAAQBAJ"]);
+        expect(getByTestId("loading")).toBeInTheDocument();
         await waitFor(() => { expect(getByText(mockBookData.data.id)).toBeInTheDocument(); });
         expect(getByText(volumeInfo.title)).toBeInTheDocument();
         expect(getByText(volumeInfo.subtitle)).toBeInTheDocument();
