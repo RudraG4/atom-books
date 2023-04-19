@@ -7,32 +7,25 @@ import Search from "components/search/Search";
 import Loader from "components/loader/Loader";
 import BookCard from "../BookCard/BookCard";
 import useBooks from "../../hooks/useBooks";
-import { searchBook } from "../../slice/BookSlice";
 
 export default function BookGrid() {
     const [searchTerm, setSearchTerm] = useState("");
-    const { dispatch, books, status, error } = useBooks();
+    const { books, status, error } = useBooks(searchTerm);
     const { showBoundary } = useErrorBoundary();
 
-    const onSearch = useCallback((searchValue) => {
-        setSearchTerm(searchValue);
-        dispatch(searchBook(searchValue));
-    }, [dispatch]);
+    const onSearch = useCallback((searchValue) => setSearchTerm(searchValue), []);
 
     useEffect(() => {
-        if (error) {
-            showBoundary(error);
-        }
+        if (!error) return;
+
+        showBoundary(error);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [error]);
 
     return (
         <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
-                <Search
-                    onSearch={onSearch}
-                    placeholder="Search title, author, publisher"
-                />
+                <Search onSearch={onSearch} placeholder="Search title, author, publisher" />
             </Grid>
             <Grid item xs={12}>
                 <Typography variant="body1" fontWeight="600" color="text.secondary">
@@ -40,11 +33,9 @@ export default function BookGrid() {
                 </Typography>
             </Grid>
             <Grid item xs={12}>
-                <Grid container spacing={2} data-testid="book-grid">
+                <Grid container spacing={2} data-testid="book-grid" minHeight="400px">
 
-                    {(status === "loading") && (
-                        <Loader height={250} />
-                    )}
+                    {status === "loading" && <Loader />}
 
                     {status === "error" && (
                         <Box display="flex" alignItems="center" justifyContent="center" height={250} width="100%">
