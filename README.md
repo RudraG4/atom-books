@@ -3,7 +3,7 @@
 
 # atom-books
 
-An Atom Book Search app created using React, Redux, React Router, Material UI
+An Atom Book Search app created using React, Redux, React Router, Material UI, Google Books API
 
 
 ## Cloning the project
