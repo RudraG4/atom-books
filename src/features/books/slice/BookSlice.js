@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, createSelector } from "@reduxjs/toolkit";
 import BooksAPI from "api/books";
 
 /** Create Async Actions */
@@ -11,30 +11,13 @@ const initialState = {
     status: "done",
     total: 0,
     books: [],
-    filteredBooks: [],
-    searchTerm: "",
+    filteredBooks: []
 };
 
 const bookSlice = createSlice({
     name: "books",
     initialState,
-    reducers: {
-        searchBook: (state, action) => {
-            const searchTerm = action.payload;
-            let filteredBooks;
-            if (searchTerm) {
-                filteredBooks = state.books.filter(
-                    (book) =>
-                        book.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                        book.authors?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                        book.publisher?.toLowerCase().includes(searchTerm.toLowerCase())
-                );
-            } else {
-                filteredBooks = state.books;
-            }
-            return { ...state, filteredBooks, searchTerm };
-        },
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(fetchBooks.pending, (state) => ({
@@ -47,7 +30,6 @@ const bookSlice = createSlice({
                 status: "done",
                 error: null,
                 books: action.payload.results,
-                filteredBooks: action.payload.results,
                 total: action.payload.total,
             }))
             .addCase(fetchBooks.rejected, (state, action) => ({
@@ -55,7 +37,6 @@ const bookSlice = createSlice({
                 status: "error",
                 error: action.error.message,
                 books: [],
-                filteredBooks: [],
                 total: 0,
             }));
     },
@@ -66,10 +47,20 @@ export const getTotal = (state) => state.books.total;
 export const getBooks = (state) => state.books.books;
 export const getStatus = (state) => state.books.status;
 export const getError = (state) => state.books.error;
-export const getFilteredBooks = (state) => state.books.filteredBooks;
-
-/** Actions from reducers */
-export const { searchBook } = bookSlice.actions;
+export const getFilteredBooks = createSelector(
+    (state) => state.books.books,
+    (state, searchTerm) => searchTerm,
+    (books, searchTerm) => {
+        if (!searchTerm) {
+            return books;
+        }
+        return books.filter(
+            (book) =>
+                book.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                book.authors?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                book.publisher?.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+    });
 
 /** Books Reducer */
 export default bookSlice.reducer;

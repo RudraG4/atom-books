@@ -9,13 +9,31 @@ BooksAPI.fetchBooks = async () => {
     const bookResponse = await axios.get(`${BASE_BOOK_URL}?q=kaplan%20test%20prep`);
     if (bookResponse?.data?.items?.length) {
         response.total = bookResponse.data.totalItems || 0;
-        response.results = bookResponse.data.items?.map((book) => ({
-            id: book.id,
-            title: book.volumeInfo?.title,
-            authors: book.volumeInfo?.authors.join(","),
-            publisher: book.volumeInfo?.publisher,
-            publishedDate: book.volumeInfo?.publishedDate,
-        }));
+        response.results = bookResponse.data.items?.map((book) => {
+            const volumeInfo = book.volumeInfo || {};
+            const isbns =
+                volumeInfo.industryIdentifiers
+                    ?.filter((ident) => ident.type.includes("ISBN"))
+                    .map((_iden) => _iden.identifier)
+                    .join(", ") || "";
+            const { medium, thumbnail } = volumeInfo.imageLinks || {};
+            const bookCover = medium || thumbnail;
+            return {
+                id: book.id,
+                title: volumeInfo.title,
+                subtitle: volumeInfo.subtitle,
+                authors: volumeInfo.authors.join(","),
+                publisher: volumeInfo.publisher,
+                publishedDate: volumeInfo.publishedDate,
+                isbns,
+                pageCount: volumeInfo.pageCount,
+                images: {
+                    bookCover,
+                    thumbnail
+                },
+                description: volumeInfo.description,
+            };
+        });
     }
     return response;
 };
@@ -30,8 +48,8 @@ BooksAPI.fetchBookById = async (bookId) => {
                 ?.filter((ident) => ident.type.includes("ISBN"))
                 .map((_iden) => _iden.identifier)
                 .join(", ") || "";
-        const bookCover =
-            volumeInfo.imageLinks?.medium || volumeInfo.imageLinks?.thumbnail;
+        const { medium, thumbnail } = volumeInfo.imageLinks || {};
+        const bookCover = medium || thumbnail;
         return {
             id: book.id,
             title: volumeInfo.title,
@@ -41,7 +59,10 @@ BooksAPI.fetchBookById = async (bookId) => {
             publishedDate: volumeInfo.publishedDate,
             isbns,
             pageCount: volumeInfo.pageCount,
-            bookCover,
+            images: {
+                bookCover,
+                thumbnail
+            },
             description: volumeInfo.description,
         };
     }
