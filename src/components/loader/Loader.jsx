@@ -3,7 +3,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import React, { useEffect, useRef, useState } from "react";
 
 export default function Loader(props) {
-    const { height = "100%", timeout = 1000, timeOutRenderer, onTimeout } = props;
+    const { height = 400, timeout = 1000, timeOutRenderer, onTimeout } = props;
     const [isTimeOut, setIsTimeOut] = useState(false);
     const timerRef = useRef();
 
@@ -19,7 +19,7 @@ export default function Loader(props) {
     }, [onTimeout, timeout]);
 
     return (
-        <Box display="flex" alignItems="center" justifyContent="center" height={height} width="100%">
+        <Box display="flex" alignItems="center" justifyContent="center" width="100%" height={height}>
             {!isTimeOut && <CircularProgress data-testid="loading" />}
             {isTimeOut && React.isValidElement(timeOutRenderer) && timeOutRenderer}
         </Box>

@@ -11,27 +11,14 @@ BooksAPI.fetchBooks = async () => {
         response.total = bookResponse.data.totalItems || 0;
         response.results = bookResponse.data.items?.map((book) => {
             const volumeInfo = book.volumeInfo || {};
-            const isbns =
-                volumeInfo.industryIdentifiers
-                    ?.filter((ident) => ident.type.includes("ISBN"))
-                    .map((_iden) => _iden.identifier)
-                    .join(", ") || "";
-            const { medium, thumbnail } = volumeInfo.imageLinks || {};
-            const bookCover = medium || thumbnail;
+            const { thumbnail } = volumeInfo.imageLinks || {};
             return {
                 id: book.id,
                 title: volumeInfo.title,
-                subtitle: volumeInfo.subtitle,
                 authors: volumeInfo.authors.join(","),
                 publisher: volumeInfo.publisher,
                 publishedDate: volumeInfo.publishedDate,
-                isbns,
-                pageCount: volumeInfo.pageCount,
-                images: {
-                    bookCover,
-                    thumbnail
-                },
-                description: volumeInfo.description,
+                images: { thumbnail }
             };
         });
     }
@@ -59,10 +46,7 @@ BooksAPI.fetchBookById = async (bookId) => {
             publishedDate: volumeInfo.publishedDate,
             isbns,
             pageCount: volumeInfo.pageCount,
-            images: {
-                bookCover,
-                thumbnail
-            },
+            images: { bookCover, thumbnail },
             description: volumeInfo.description,
         };
     }

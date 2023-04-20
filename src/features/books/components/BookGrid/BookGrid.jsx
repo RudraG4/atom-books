@@ -1,12 +1,15 @@
 import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { useErrorBoundary } from "react-error-boundary";
 import { useState, useEffect, useCallback } from "react";
 import Search from "components/search/Search";
-import Loader from "components/loader/Loader";
+import DataGrid from "components/grid/DataGrid";
 import BookCard from "../BookCard/BookCard";
 import useBooks from "../../hooks/useBooks";
+
+function BookCardRenderer(book) {
+    return <BookCard book={book} />;
+}
 
 export default function BookGrid() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -33,34 +36,12 @@ export default function BookGrid() {
                 </Typography>
             </Grid>
             <Grid item xs={12}>
-                <Grid container spacing={2} data-testid="book-grid" minHeight="400px">
-
-                    {status === "loading" && <Loader />}
-
-                    {status === "error" && (
-                        <Box display="flex" alignItems="center" justifyContent="center" height={250} width="100%">
-                            <Typography variant="body2" fontWeight="600" color="text.secondary">
-                                {error}
-                            </Typography>
-                        </Box>
-                    )}
-
-                    {status === "done" && !books.length && (
-                        <Box display="flex" alignItems="center" justifyContent="center" height={250} width="100%">
-                            <Typography fontWeight="600" color="text.secondary">
-                                No Data
-                            </Typography>
-                        </Box>
-                    )}
-
-                    {status === "done" && !!books.length && (
-                        books.map((book) => (
-                            <Grid item xs={12} md={6} key={book.id}>
-                                <BookCard book={book} />
-                            </Grid>
-                        ))
-                    )}
-                </Grid>
+                <DataGrid
+                    status={status}
+                    error={error}
+                    results={books}
+                    itemRenderer={BookCardRenderer}
+                />
             </Grid>
         </Grid>
     );
