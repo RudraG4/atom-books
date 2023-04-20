@@ -99,7 +99,7 @@ describe("BookSearch component", () => {
             expect(store.getState().books.error).toBeNull();
         }, { interval: 1000, timeout: 5000 });
 
-        const bookGrid = screen.queryByTestId("book-grid");
+        const bookGrid = screen.queryByTestId("data-grid");
         expect(bookGrid).not.toBeNull();
         expect(bookGrid.children.length).toBe(3);
 
@@ -114,7 +114,7 @@ describe("BookSearch component", () => {
 
         renderWithContext(<BookSearch />);
 
-        let bookGrid = screen.queryByTestId("book-grid");
+        let bookGrid = screen.queryByTestId("data-grid");
         expect(bookGrid).not.toBeNull();
         expect(bookGrid.children.length).toBe(3);
 
@@ -122,7 +122,7 @@ describe("BookSearch component", () => {
         await userEvent.type(searchInput, "GRE");
         await waitFor(
             () => {
-                bookGrid = screen.queryByTestId("book-grid");
+                bookGrid = screen.queryByTestId("data-grid");
                 expect(bookGrid.children.length).toBe(2);
                 expect(screen.queryByText("Results for 'GRE'")).toBeInTheDocument();
             },
@@ -133,7 +133,7 @@ describe("BookSearch component", () => {
         await userEvent.type(searchInput, "Simson");
         await waitFor(
             () => {
-                bookGrid = screen.queryByTestId("book-grid");
+                bookGrid = screen.queryByTestId("data-grid");
                 expect(bookGrid.children.length).toBe(1);
                 expect(screen.queryByText("Results for 'Simson'")).toBeInTheDocument();
             },
@@ -144,7 +144,7 @@ describe("BookSearch component", () => {
         await userEvent.type(searchInput, "Kaplan Test Prep");
         await waitFor(
             () => {
-                bookGrid = screen.queryByTestId("book-grid");
+                bookGrid = screen.queryByTestId("data-grid");
                 expect(bookGrid.children.length).toBe(2);
                 expect(screen.queryByText("Results for 'Kaplan Test Prep'")).toBeInTheDocument();
             },
