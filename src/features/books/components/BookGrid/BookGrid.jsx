@@ -1,10 +1,8 @@
 import Grid from "@mui/material/Grid";
-// import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { useErrorBoundary } from "react-error-boundary";
 import { useState, useEffect, useCallback } from "react";
 import Search from "components/search/Search";
-// import Loader from "components/loader/Loader";
 import DataGrid from "components/grid/DataGrid";
 import BookCard from "../BookCard/BookCard";
 import useBooks from "../../hooks/useBooks";
