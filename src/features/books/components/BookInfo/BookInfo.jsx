@@ -27,7 +27,7 @@ export default function BookInfo() {
             {!book && (<Loader timeOutRenderer={(<NotFound />)} />)}
             {
                 book && (
-                    <Box component="section">
+                    <Box component="section" mb={3}>
                         <Box className="book-title" mb={3}>
                             <Box
                                 display="flex"
@@ -91,12 +91,12 @@ export default function BookInfo() {
                             </Box>
                         </Box>
 
-                        <Box className="book-description" mb="3">
+                        <Box className="book-description" mb={3}>
                             <Box>
                                 <Typography variant="h4" component="h4" fontWeight={600} mb={2}>
                                     Book Description
                                 </Typography>
-                                <Typography component="p">{book.description ? parse(book.description) : ""}</Typography>
+                                <Typography component="div">{book.description ? parse(book.description) : ""}</Typography>
                             </Box>
                         </Box>
                     </Box>
