@@ -1,6 +1,6 @@
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BiSearch } from "react-icons/bi";
 import PropTypes from "prop-types";
 import useDebounce from "hooks/useDebounce";
@@ -24,7 +24,7 @@ function Search(props) {
             fullWidth
             value={searchTerm}
             variant="standard"
-            placeholder={placeholder || "Search"}
+            placeholder={placeholder}
             data-testid="search"
             onChange={onChange}
             InputProps={{
@@ -40,10 +40,12 @@ function Search(props) {
 
 Search.defaultProps = {
     onSearch: () => { },
+    placeholder: "Search"
 };
 
 Search.propTypes = {
     onSearch: PropTypes.func,
+    placeholder: PropTypes.string
 };
 
-export default Search;
+export default React.memo(Search);

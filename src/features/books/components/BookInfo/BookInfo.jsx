@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import PageContainer from "components/pagecontainer/PageContainer";
 import Loader from "components/loader/Loader";
+import NotFound from "features/NotFound";
 import { fetchBookById } from "../../slice/BookSlice";
 
 export default function BookInfo() {
@@ -23,14 +24,10 @@ export default function BookInfo() {
 
     return (
         <PageContainer>
-            {
-                !book && (
-                    <Loader height={250} />
-                )
-            }
+            {!book && (<Loader timeOutRenderer={(<NotFound />)} />)}
             {
                 book && (
-                    <Box component="section">
+                    <Box component="section" mb={3}>
                         <Box className="book-title" mb={3}>
                             <Box
                                 display="flex"
@@ -47,7 +44,7 @@ export default function BookInfo() {
                                             maxHeight: { xs: 300, md: 480 },
                                         }}
                                         alt={book.title}
-                                        src={book.bookCover}
+                                        src={book.images.bookCover}
                                     />
                                 </Box>
                                 <Box sx={{ flex: "1 0 50%" }}>
@@ -94,12 +91,12 @@ export default function BookInfo() {
                             </Box>
                         </Box>
 
-                        <Box className="book-description" mb="3">
+                        <Box className="book-description" mb={3}>
                             <Box>
                                 <Typography variant="h4" component="h4" fontWeight={600} mb={2}>
                                     Book Description
                                 </Typography>
-                                <Typography component="p">{parse(book.description)}</Typography>
+                                <Typography component="div">{book.description ? parse(book.description) : ""}</Typography>
                             </Box>
                         </Box>
                     </Box>

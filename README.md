@@ -1,7 +1,9 @@
+![Logo](banner/atom-logo.png)
+
 
 # atom-books
 
-An Atom Book Search app created using React, Redux, React Router, Material UI
+An Atom Book Search app created using React, Redux, React Router, Material UI, Google Books API
 
 
 ## Cloning the project
@@ -39,3 +41,9 @@ To deploy the app locally run below command
 
   serve -s build
 ```
+
+## Screenshots
+
+![App Screenshot](banner/atom-books-banner_1.png)
+
+![App Screenshot](banner/atom-books-banner_2.png)

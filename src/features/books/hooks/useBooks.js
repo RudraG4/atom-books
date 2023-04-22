@@ -1,11 +1,10 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { getFilteredBooks, getStatus, getError } from "../slice/BookSlice";
 
-export default function useBooks() {
-    const dispatch = useDispatch();
-    const books = useSelector(getFilteredBooks);
+export default function useBooks(searchTerm) {
+    const books = useSelector((state) => getFilteredBooks(state, searchTerm));
     const status = useSelector(getStatus);
     const error = useSelector(getError);
 
-    return { dispatch, books, status, error };
+    return { books, status, error };
 }

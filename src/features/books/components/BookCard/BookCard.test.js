@@ -38,19 +38,13 @@ describe("BookCard component", () => {
         expect(screen.getByTestId("title")).toHaveTextContent(book.title);
         expect(screen.getByTestId("authors")).toHaveTextContent(book.authors);
         expect(screen.getByTestId("publisher")).toHaveTextContent(book.publisher);
-        expect(screen.getByTestId("publisheddate")).toHaveTextContent(
-            book.publishedDate
-        );
+        expect(screen.getByTestId("publisheddate")).toHaveTextContent(book.publishedDate);
     });
 
     test("Should throw error if book is not passed", () => {
-        expect(() => renderWithRouter(<BookCard />)).toThrow(
-            "BookCard is requires 'book' prop"
-        );
+        expect(() => renderWithRouter(<BookCard />)).toThrow("BookCard requires a 'book' prop");
         expect(console.error).toHaveBeenCalled();
-        expect(console.error.mock.calls[0][2]).toMatch(
-            /`book` is marked as required/
-        );
+        expect(console.error.mock.calls[0][2]).toMatch(/`book` is marked as required/);
     });
 
     test("Should throw error if required props is not passed", () => {
@@ -59,8 +53,6 @@ describe("BookCard component", () => {
             "BookCard's book prop is missing mandatory fields"
         );
         expect(console.error).toHaveBeenCalled();
-        expect(console.error.mock.calls[0][2]).toMatch(
-            /`book.title` is marked as required/
-        );
+        expect(console.error.mock.calls[0][2]).toMatch(/`book.title` is marked as required/);
     });
 });
